@@ -1,80 +1,77 @@
-# ReactJS + Webpack + Redux + React-router (Boilerplate Code)
+# PG-Management System
 
-<!-- Click [here](https://docs.cashfree.com/docs/react-native-integration) for more Documentation. -->
+The PG-Management System is a comprehensive software solution designed to streamline and enhance the management of
+Paying Guest accommodations. This repository serves as the central hub for collaborative development and improvement of
+the PG-Management System.
 
-#### Requirements -
+## Key Features
 
--   Node version 16 or higher.
+1. **Tenant Management:**
 
-#### Installation
+    - Easy registration and profile management for PG residents.
+    - Track tenant details, including personal information, contact details, and lease agreements.
 
-```sh
-1. Clone the Repo.
-2. Delete the existing .git (hidden) folder completely.
-3. Initialize a new git repository using - git init
-3. Change the root favicon, index.html file content (Title, Description...etc) as per the client details.
-4. Install all the project dependencies using - npm install or npm install --legacy-peer-deps
-```
+2. **Room Allocation and Availability:**
 
-#### Dependencies -
+    - Efficiently allocate rooms to tenants based on preferences and availability.
+    - Real-time updates on room occupancy and availability.
 
--   [node-sass](https://www.npmjs.com/package/node-sass) - Preprocessor for UI styling.
--   [query-string](https://www.npmjs.com/package/query-string) - To parse query parameters.
--   [react-device-detect](https://www.npmjs.com/package/react-device-detect) - Conditional UI rendering based on user
-    device (certain UI element show & hide w.r.t mobile vs desktop vs tablets), we can conditionally add inline css,
-    className too, very useful in terms of responsive UI.
--   [react-helmet](https://www.npmjs.com/package/react-helmet) - To add page wise meta tags and other SEO specific
-    details.
--   [react-loader-spinner](https://www.npmjs.com/package/react-loader-spinner) - To show custom loader spinner.
--   [redux](https://www.npmjs.com/package/redux) - for state management.
--   [react-redux](https://www.npmjs.com/package/react-redux) - React specific redux state management methods.
--   [react-router-dom](https://www.npmjs.com/package/react-router-dom) - For routing app to different pages
+3. **Billing and Payments:**
 
-#### Run App -
+    - Automated billing system for rent, utilities, and additional services.
+    - Payment tracking and reminders to ensure timely payments.
 
--   npm rebuild node-sass (_Need to run this if **npm start** fails_)
--   npm start
+4. **Maintenance Requests:**
 
-#### Project directory structure
+    - Residents can submit maintenance requests through the system.
+    - Maintenance staff can manage and prioritize tasks, updating the status in real-time.
 
-```
-src
-├── Assets
-│   ├── Animations
-│   ├── SEO
-│   └── Videos
-├── Components
-│   ├── Button
-│   ├── HrLine
-│   ├── Input
-│   └── Otp
-├── Layouts
-├── Redux
-├── Styles
-│   ├── css
-│   └── sass
-├── Views
-│   ├── afterAuth
-│   │   ├── Dashboard
-│   │   │   └── Redux
-│   │   └── Orders
-│   └── beforeAuth
-│       ├── Components
-│       ├── Landing
-│       └── Login
-└── utils
+5. **Communication Module:**
 
+    - Internal messaging system for residents and administrators.
+    - Broadcast important announcements and updates.
 
+6. **Visitor Management:**
 
-1. Assets      ->  Contain all project's assets
-2. Components  ->  All re-usable components will be places here in a folder along with its stylings (style.scss) and markup
-3. Redux       ->  Root level redux content (Root reducer - merge all reducers along with store config)
-4. Styles      ->  Global re-usable styles, sass mixins, variables, utils, animations...etc
-5. Layouts     ->  Will contain responsive re-usable layouts.
-6. Views       ->  Contain Actual UI Markup + Stylings + View specific Redux
-7. Utils       ->  Contains utility functions....etc
-```
+    - Log and track visitor details for security and transparency.
+    - Provide residents with the ability to pre-authorize guest stays.
 
-##### Note
+7. **Document Management:**
 
-    View = Layout + Components
+    - Securely store and manage important documents such as lease agreements, identification proofs, and maintenance
+      records.
+
+8. **Reporting and Analytics:**
+
+    - Generate insightful reports on occupancy rates, revenue, and maintenance trends.
+    - Data analytics tools for PG owners to make informed decisions.
+
+9. **User Authentication and Security:**
+
+    - Implement robust user authentication for secure access.
+    - Encrypt sensitive information and ensure data privacy.
+
+10. **Customization:**
+    - Allow PG owners to customize settings and configurations to align with their specific requirements.
+    - Support for additional features and integrations.
+
+## Technologies
+
+-   **Frontend:** HTML, CSS, JavaScript, React.js (or other preferred frameworks).
+-   **Backend:** Node.js, Express.js (or other preferred backend technologies).
+-   **Database:** MongoDB (or other preferred database systems).
+-   **Version Control:** Git for code management.
+
+## Contribution
+
+This PG-Management System is an open-source project, and we welcome contributions from the community to improve and
+enhance its features and functionality. Please check the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how
+to contribute.
+
+## Getting Started
+
+To get started with the PG-Management System, follow the instructions in the [INSTALLATION.md](INSTALLATION.md) file.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

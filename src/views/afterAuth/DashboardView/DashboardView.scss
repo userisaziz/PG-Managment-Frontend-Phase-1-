@@ -1,0 +1,59 @@
+@import '../../../styles/sass/variables';
+
+.DashboardView {
+	&--Divider {
+		display: flex;
+	}
+	&--Left {
+		width: 70%;
+		.ViewDetailsCard {
+			&--Title {
+				font-size: 1.8rem;
+			}
+		}
+	}
+	&--LeftCards {
+		display: flex;
+	}
+	&--Right {
+		width: 29%;
+	}
+
+	&--Cards {
+		width: 33.33%;
+	}
+	&--Doughnut {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 4.8rem;
+		min-height: 50rem;
+	}
+	&--MiddleContainer {
+		display: flex;
+	}
+	&--LeftDoughnutBox {
+		display: flex;
+		width: 70%;
+		justify-content: space-between;
+	}
+	&--ContainerDoughnut {
+		width: 50%;
+	}
+	&--Progress {
+		width: 29%;
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+	&--Labels {
+		.LabelContainer {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-row-gap: 1rem;
+			grid-column-gap: 1rem;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+@import '../../../styles/sass/variables';
+
+.Tab {
+	border-bottom: 1px solid rgba(202, 201, 201, 0.3);
+	display: flex;
+	gap: 2rem;
+	margin-bottom: 1rem;
+	&--TabName {
+		padding-bottom: 1.5rem;
+		font-size: 2rem;
+		font-weight: 600;
+		line-height: 22px;
+		cursor: pointer;
+		background: inherit;
+		border: 0;
+		outline: 0;
+		color: $color-grey-700;
+	}
+	&--Active {
+		border-bottom: 2px solid $color-dark-red-400;
+		color: $color-dark-red-400;
+	}
+}

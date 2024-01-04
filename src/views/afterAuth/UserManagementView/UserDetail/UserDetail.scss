@@ -1,0 +1,24 @@
+@import '../../../../styles/sass/variables';
+
+.UserDetail {
+	&--BreadCrumb {
+		padding: 10px;
+	}
+	&--Container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&--Tab {
+		margin-bottom: 2.5rem;
+	}
+	&--BoxFull {
+		width: 100%;
+	}
+	&--Box {
+		width: 65%;
+	}
+	&--SideContent {
+		width: 35%;
+	}
+}

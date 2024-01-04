@@ -1,0 +1,54 @@
+@import '../../../../../styles/sass/variables';
+.ProfileDetail {
+	&--Header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 2.4rem;
+	}
+	&--Title {
+		color: $color-black-200;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 2.2rem;
+	}
+	&--Chip {
+		display: flex;
+		gap: 2rem;
+		color: $color-grey-650;
+	}
+	&--ImageContainer {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		margin-bottom: 2.4rem;
+	}
+	&--Image {
+		width: 13rem;
+		height: 19rem;
+		object-fit: cover;
+		border-radius: 0.6rem;
+	}
+	&--DetailHeader {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-row-gap: 2.4rem;
+		margin: 3rem 0;
+		grid-column-gap: 2rem;
+	}
+	&--OtherDetails {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-row-gap: 2.4rem;
+		margin: 3rem 0;
+		grid-column-gap: 4rem;
+	}
+	&--Buttons {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		gap: 4rem;
+		margin-top: 4rem;
+	}
+}

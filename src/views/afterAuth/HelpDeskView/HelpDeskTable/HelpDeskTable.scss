@@ -1,0 +1,38 @@
+@import '../../../../styles//sass/variables';
+
+.HelpDeskTable {
+	&--Header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.5rem 3.2rem;
+		height: 80px;
+	}
+	&--HeaderLeft {
+		display: flex;
+		gap: 80px;
+	}
+	&--Title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $color-primary;
+		font-size: 2.8rem;
+		font-style: normal;
+		font-weight: 600;
+	}
+	&--Tabs {
+		margin: 16px 0 0 32px;
+	}
+	// &--SearchContainer {
+	// 	display: flex;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// }
+	&--Search {
+		width: 350px;
+	}
+	&--Box {
+		padding: 0;
+	}
+}

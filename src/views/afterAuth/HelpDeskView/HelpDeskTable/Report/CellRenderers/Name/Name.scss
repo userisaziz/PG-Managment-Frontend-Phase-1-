@@ -1,0 +1,11 @@
+.Report {
+	&--Name {
+		cursor: pointer;
+		width: 10vw;
+	}
+	&--Name {
+		:hover {
+			text-decoration: underline;
+		}
+	}
+}

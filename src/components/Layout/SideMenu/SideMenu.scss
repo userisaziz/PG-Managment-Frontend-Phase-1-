@@ -1,0 +1,78 @@
+@import '../../../styles/sass/variables';
+@import '../../../styles/sass/mixins';
+
+.SideMenu {
+	padding: 4rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+	background-color: $color-white-100;
+	border-right: 1px solid $color-grey-300;
+	overflow-y: scroll;
+	@include disableScroll;
+
+	&--Body {
+		width: 100%;
+	}
+
+	&--Item {
+		width: 100%;
+		padding: 18px 24px;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		user-select: none;
+		color: $color-grey-700;
+	}
+
+	&--Inactive {
+		width: 100%;
+		background-color: $color-white-100;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&--Active {
+		width: 100%;
+		border-radius: 0.8rem;
+		background-color: $color-dark-red-100;
+
+		h1 {
+			color: $color-dark-red-400;
+			font-weight: 600;
+		}
+
+		svg {
+			color: $color-dark-red-400;
+		}
+
+		&:hover {
+			cursor: default;
+		}
+	}
+
+	&--ItemText {
+		font-size: 1.6rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 2.2rem;
+	}
+
+	&--Logout {
+		width: 100%;
+		background-color: $color-white-100;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&--Image {
+		width: 6rem;
+		height: 5rem;
+		object-fit: contain;
+		text-align: center;
+	}
+}

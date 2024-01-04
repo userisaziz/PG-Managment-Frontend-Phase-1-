@@ -1,0 +1,55 @@
+@import '../../../../styles/sass/variables';
+.ActivityView {
+	&--Header {
+		margin-bottom: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		justify-content: space-between;
+	}
+	&--Chip {
+		display: flex;
+		gap: 1rem;
+	}
+	&--RightHeader {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+	&--Title {
+		color: $color-black-200;
+		font-size: 1.6rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 2.2rem;
+	}
+	&--Download {
+		.DropdownContainer {
+			&--DropdownHeader {
+				height: 3.2rem;
+				font-size: 1.4rem;
+				width: 15rem;
+				padding: 0rem 0.5rem;
+			}
+		}
+	}
+	&--Dropdown {
+		width: 14rem;
+		padding: 0rem 0.5rem;
+		.Input {
+			min-height: 3rem;
+			&--InputField {
+				font-size: 1.4rem;
+				margin: 0rem;
+				padding: 0rem 0.5rem;
+				height: 3.2rem;
+			}
+			&--InputBox {
+				font-size: 1.4rem;
+			}
+		}
+	}
+	&--Line {
+		width: 100%;
+	}
+}

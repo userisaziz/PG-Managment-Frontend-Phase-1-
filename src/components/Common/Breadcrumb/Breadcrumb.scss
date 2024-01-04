@@ -1,0 +1,29 @@
+@import '../../../styles/sass/variables';
+
+.Breadcrumb {
+	padding: 0.8rem 1.5rem;
+	list-style: none;
+
+	&--Breadcrumb-item {
+		display: inline-block;
+		font-size: 1.6rem;
+		color: $color-grey-500;
+		font-weight: 400;
+	}
+
+	&--Breadcrumb-item + &--Breadcrumb-item::before {
+		content: '/';
+		padding: 0 0.4rem;
+	}
+
+	&--Breadcrumb-item + &--Breadcrumb-item::before {
+		content: '/';
+		padding: 0 0.4rem;
+	}
+
+	&--Breadcrumb-item.active {
+		color: $color-grey-700;
+		font-size: 1.6rem;
+		font-weight: 600;
+	}
+}

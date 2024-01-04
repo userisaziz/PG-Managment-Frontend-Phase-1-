@@ -1,0 +1,26 @@
+@import '../../../styles/sass/variables';
+
+.Header {
+	width: 100%;
+	padding: 14px 22px;
+	display: flex;
+	background-color: $color-white-100;
+	justify-content: end;
+	align-items: center;
+	gap: 2rem;
+	position: fixed;
+	top: 0;
+	z-index: $zIndex-header;
+	border-bottom: 1px solid #cac9c94d;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	&--Left {
+		width: 100%;
+	}
+
+	&--Right {
+		display: flex;
+	}
+}

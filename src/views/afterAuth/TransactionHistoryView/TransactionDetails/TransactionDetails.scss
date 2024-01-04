@@ -1,0 +1,68 @@
+@import '../../../../styles/sass/variables';
+
+.TransactionDetails {
+	&--BreadCrumb {
+		padding: 10px;
+	}
+	&--TransactionHeader {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&--UserName {
+		font-size: 2.8rem;
+		font-weight: 600;
+	}
+
+	&--DownloadSelect {
+		width: 25rem;
+	}
+
+	&--Values {
+		display: flex;
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	&--ContinentTitle {
+		font-size: 2.4rem;
+		font-weight: 600;
+	}
+
+	&--Container {
+		font-size: 1.6rem;
+		font-weight: 400;
+		color: $color-primary;
+		margin-top: 2.4rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+	}
+
+	&--TransactionDetails {
+		display: flex;
+		justify-content: space-between;
+		width: 60%;
+		align-items: center;
+	}
+	&--Name {
+		font-size: 1.6rem;
+		font-weight: 400;
+	}
+
+	&--NameTotal {
+		font-size: 1.6rem;
+		font-weight: 600;
+	}
+
+	&--TransactionTotal {
+		margin-top: 2.4rem;
+		display: flex;
+		justify-content: space-between;
+		width: 60%;
+		align-items: center;
+	}
+}

@@ -94,9 +94,23 @@ const DashboardView = () => {
 							subheading="Total query resolved"
 							className="DashboardView--Cards"
 						/>
+						<DashboardCard
+							icon={<OpenBook />}
+							heading="995"
+							subheading="Total query resolved"
+							className="DashboardView--Cards"
+						/>
 					</div>
 					<div>
-						<Box>{/* <ActivityView /> */}</Box>
+						<Box>
+							{/* <ActivityView /> */}
+							<DashboardCard
+								icon={<OpenBook />}
+								heading="995"
+								subheading="Total query resolved"
+								className="DashboardView--Cards"
+							/>
+						</Box>
 					</div>
 				</section>
 

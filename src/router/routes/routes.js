@@ -13,7 +13,7 @@ import { HelpDeskTable, ViewReport, ViewTicket } from '../../views/afterAuth/Hel
 import { UserDetail, UserManagementTable } from '../../views/afterAuth/UserManagementView';
 import { TransactionTable, TransactionDetails } from '../../views/afterAuth/TransactionHistoryView';
 import AddTenants from '../../views/afterAuth/Tenants/AddTenants/AddTenants';
-import CRM from '../../views/afterAuth/CRM/Crm';
+import CRM from '../../views/afterAuth/CRM/CRM';
 const LoginLayout = React.lazy(() => import(`../../layouts/LoginLayout/LoginLayout`));
 
 const router = createBrowserRouter([

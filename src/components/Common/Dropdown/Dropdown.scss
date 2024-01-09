@@ -1,7 +1,7 @@
 @import '../../../styles/sass/variables';
 
 .Dropdown {
-	width: 230px;
+	width: 100%;
 	height: auto;
 	position: relative;
 
@@ -23,7 +23,7 @@
 	}
 
 	&--Menu {
-		width: inherit;
+		width: 100%;
 		position: absolute;
 		max-height: 250px;
 		overflow-y: auto;

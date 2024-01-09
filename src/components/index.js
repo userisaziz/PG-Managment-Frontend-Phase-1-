@@ -35,6 +35,7 @@ import {
 	PaymentHistory,
 	RadioButton,
 	RadioGroup,
+	CustomSelect,
 } from './Common';
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 import { Header } from './Layout';
@@ -43,6 +44,7 @@ export {
 	Box,
 	Button,
 	Checkbox,
+	CustomSelect,
 	DashboardCard,
 	Input,
 	Modal,

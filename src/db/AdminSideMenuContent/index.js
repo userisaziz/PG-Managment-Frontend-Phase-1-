@@ -24,7 +24,7 @@ const SideMenuContent = () => [
 	},
 
 	{
-		title: 'Stock',
+		title: 'CRM',
 		path: pathname.CONTENT_MANAGEMENT,
 		key: 'content-management',
 		icon: <ContentManagement />,

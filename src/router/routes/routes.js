@@ -12,7 +12,8 @@ import AdminPanelLayout from '../../layouts/AdminPanelLayout/AdminPanelLayout';
 import { HelpDeskTable, ViewReport, ViewTicket } from '../../views/afterAuth/HelpDeskView';
 import { UserDetail, UserManagementTable } from '../../views/afterAuth/UserManagementView';
 import { TransactionTable, TransactionDetails } from '../../views/afterAuth/TransactionHistoryView';
-import AddUser from '../../views/afterAuth/UserManagementView/AddUser/AddUser';
+import AddTenants from '../../views/afterAuth/Tenants/AddTenants/AddTenants';
+import CRM from '../../views/afterAuth/CRM/Crm';
 const LoginLayout = React.lazy(() => import(`../../layouts/LoginLayout/LoginLayout`));
 
 const router = createBrowserRouter([
@@ -65,7 +66,7 @@ const router = createBrowserRouter([
 					},
 					{
 						path: pathname.ADD_TENANT,
-						element: <AddUser />,
+						element: <AddTenants />,
 					},
 				],
 			},
@@ -103,7 +104,17 @@ const router = createBrowserRouter([
 			},
 			{
 				path: pathname.CONTENT_MANAGEMENT,
-				element: <ContentManagement />,
+				element: <CRM />,
+				children: [
+					{
+						index: true,
+						element: <CRM />,
+					},
+					// {
+					// 	path: pathname.TRANSACTION_DETAILS,
+					// 	element: <TransactionDetails />,
+					// },
+				],
 			},
 		],
 	},

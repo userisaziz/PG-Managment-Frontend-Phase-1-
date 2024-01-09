@@ -34,10 +34,13 @@ import Referral from './Referral/Referral.jsx';
 import PaymentHistory from './PaymentHistory/PaymentHistory.jsx';
 import RadioGroup from './RadioGroup/RadioGroup.jsx';
 import RadioButton from './RadioButton/RadioButton.jsx';
+import CustomSelect from './CustomSelect/CustomSelect.jsx';
+
 export {
 	Box,
 	Button,
 	Checkbox,
+	CustomSelect,
 	DashboardCard,
 	Input,
 	Modal,

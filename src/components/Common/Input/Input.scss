@@ -14,8 +14,8 @@
 		// margin: 1rem 0 0 0;
 		border-radius: 0.8rem;
 		padding: 1rem 1rem;
-		border: 1px solid $color-grey-400;
-		background-color: $color-white-100;
+		border: 1px solid $color-grey-900;
+		background-color: $color-black-100;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -91,7 +91,7 @@
 
 	&--Error {
 		border: 1px solid $color-red-800;
-		background-color: $color-white-100;
+		background-color: $color-black-100;
 		caret-color: $color-red-800;
 		::placeholder {
 			color: $color-red-800;

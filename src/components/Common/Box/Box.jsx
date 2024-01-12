@@ -1,9 +1,9 @@
 import React from 'react';
 import './Box.scss';
 const Box = (props) => {
-	const { children, className } = props;
+	const { children, className, dark } = props;
 
-	const customClassName = `Box ${className}`;
+	const customClassName = `Box ${className} ${dark && 'Box--dark'} `;
 
 	return <section className={customClassName}>{children}</section>;
 };

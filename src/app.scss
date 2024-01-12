@@ -17,7 +17,8 @@ html {
 
 body {
 	scroll-behavior: smooth;
-	background-color: $color-grey-200;
+	// background-color: $color-grey-200;
+	background-color: $color-grey-900;
 	@include disableScroll;
 }
 

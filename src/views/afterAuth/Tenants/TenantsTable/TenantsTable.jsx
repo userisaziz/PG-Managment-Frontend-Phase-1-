@@ -16,31 +16,15 @@ const TenantsTable = () => {
 	const [selectValue, setSelectValue] = useState('');
 	const [continentValue, setContinentValue] = useState('');
 
-	const handleSelect = (val) => {
-		console.log(val);
-		setSelectValue(val);
-	};
 	const menu = [
 		{
-			continent: 'ASIA',
+			continent: 'Name',
 		},
 		{
-			continent: 'EUROPE',
+			continent: 'Aadhar Number',
 		},
 		{
-			continent: 'AFRICA',
-		},
-		{
-			continent: 'SOUTH_AMERICA',
-		},
-		{
-			continent: 'NORTH_AMERICA',
-		},
-		{
-			continent: 'AUSTRALIA',
-		},
-		{
-			continent: 'ANTARCTICA',
+			continent: 'Phone Number',
 		},
 	];
 	const rowData = [
@@ -119,29 +103,33 @@ const TenantsTable = () => {
 		navigateTo(pathname.ADD_TENANT);
 	};
 	return (
-		<Box className="UserManagementTable">
-			<div className="UserManagementTable--Header">
-				<Typography className="UserManagementTable--Title">Tenant List</Typography>
-				<SearchBar placeholder="Search users" />
-				<Dropdown
-					placeholder="Select Continent"
-					options={menu}
-					keyToRead="continent"
-					isRequired={true}
-					value={continentValue}
-					onSelect={(value) => setContinentValue(value?.continent)}
-					className="UserManagementTable--Dropdown"
-				/>
-				{/* <Download
-					className="UserManagementTable--Download"
+		<Box className="TenantsTable">
+			<div className="TenantsTable--Header">
+				<div>
+					<Typography className="TenantsTable--Title">Tenant List</Typography>
+				</div>
+				<div className="TenantsTable--HeaderRight">
+					<Dropdown
+						placeholder="Search by"
+						options={menu}
+						keyToRead="continent"
+						isRequired={true}
+						value={continentValue}
+						onSelect={(value) => setContinentValue(value?.continent)}
+						className="TenantsTable--Dropdown"
+					/>
+					<SearchBar placeholder="Search users" />
+					{/* <Download
+					className="TenantsTable--Download"
 					value={selectValue}
 					onchange={(value) => handleSelect(value)}
 				/> */}
-				<Button variant="primary" onClick={handleButtonClick}>
-					Add Tenant
-				</Button>
+					<Button variant="primary" onClick={handleButtonClick}>
+						Add Tenant
+					</Button>
+				</div>
 			</div>
-			<Table className="UserManagementTable--Table" header={tableHeader} row={rowData} />
+			<Table className="TenantsTable--Table" header={tableHeader} row={rowData} />
 		</Box>
 	);
 };

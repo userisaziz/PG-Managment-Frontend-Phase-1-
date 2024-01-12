@@ -1,3 +1,5 @@
+@import '../../../styles/sass/variables';
+
 .DashboardCard {
 	width: 100%;
 	display: flex;
@@ -5,7 +7,7 @@
 	gap: 16px;
 
 	&--Heading {
-		color: #000;
+		color: $color-primary;
 		font-size: 2.8rem;
 		font-style: normal;
 		font-weight: 600;

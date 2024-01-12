@@ -20,8 +20,10 @@ const DashboardView = () => {
 		datasets: [
 			{
 				data: [9, 17, 3, 5, 10, 11, 56],
-				fill: true,
-				backgroundColor: ['#FF6B6B', '#DD7BFF', '#FFC9CF', '#6F6F6F', '#FF946E', '#FBD051', '#89C5F5'],
+				hoverOffset: 0,
+				cutout: '75%',
+				rotation: 270,
+				borderRadius: [8, 8, 8, 8, 8, 8, 8],
 			},
 		],
 	};

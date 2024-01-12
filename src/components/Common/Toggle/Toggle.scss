@@ -12,7 +12,7 @@
 	&--Knob {
 		width: 1.8rem;
 		height: 1.8rem;
-		background-color: $color-white-100;
+		background-color: $color-black-100;
 		border-radius: 50%;
 		position: absolute;
 		top: 14%;
@@ -25,7 +25,7 @@
 	}
 
 	&.off {
-		background-color: $color-white-100;
+		background-color: $color-black-100;
 		border: 1px solid $color-grey-500;
 	}
 	&.off &--Knob {

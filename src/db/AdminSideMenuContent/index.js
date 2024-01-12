@@ -17,9 +17,9 @@ const SideMenuContent = () => [
 	},
 
 	{
-		title: 'Maintainance',
-		path: pathname.TRANSACTION_HISTORY,
-		key: 'transaction-history',
+		title: 'Hostels/PG',
+		path: pathname.HOSTELS,
+		key: 'hostel-management',
 		icon: <Transaction />,
 	},
 

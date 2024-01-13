@@ -4,9 +4,9 @@ import Chip from '../Chip/Chip';
 import './Interest.scss';
 
 const Interest = (props) => {
-	const { data } = props;
+	const { data, label = 'Interest' } = props;
 	return (
-		<ValueField label="Interest">
+		<ValueField label={label}>
 			<div className="Interest--Container">
 				{data?.map((data) => (
 					<Chip label={data} className="Interest--Chip" />

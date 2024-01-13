@@ -9,11 +9,7 @@
 		flex-direction: column;
 		gap: 20px;
 	}
-	&--Name {
-		font-size: 2.8rem;
-		font-weight: 600;
-		// padding-bottom: 20px;
-	}
+
 	&--Container {
 		display: flex;
 		justify-content: space-between;
@@ -30,5 +26,11 @@
 	}
 	&--SideContent {
 		width: 35%;
+	}
+	&--Name {
+		font-size: 2.8rem;
+		font-weight: 600;
+		color: $color-primary;
+		// padding-bottom: 20px;
 	}
 }

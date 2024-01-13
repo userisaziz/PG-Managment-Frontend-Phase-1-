@@ -1,0 +1,19 @@
+.AllHostels {
+	&--Header {
+		display: flex;
+		gap: 10px;
+	}
+	&--Sections {
+		display: flex;
+	}
+	&--MiddleSection {
+		display: flex;
+		gap: 10px;
+		flex-direction: column;
+	}
+	&--RightSection {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+}

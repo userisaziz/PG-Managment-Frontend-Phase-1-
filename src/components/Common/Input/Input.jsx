@@ -45,12 +45,12 @@ const Input = React.forwardRef((props, ref) => {
 	};
 
 	return (
-		<div className={customClassName}>
+		<>
 			<div className={`${inputFieldErrorHandle} ${disabledClassName} ${inputFocusHandle}`}>
 				<input
 					{...rest}
 					ref={ref}
-					className="Input--InputBox"
+					className={`Input--InputBox ${customClassName}`}
 					id={id}
 					type={type}
 					onChange={onChange}
@@ -71,7 +71,7 @@ const Input = React.forwardRef((props, ref) => {
 				{icon && <div className="Input--Icon">{icon}</div>}
 			</div>
 			{isError && <Typography className="Input--ErrorMessage">{errorMessage}</Typography>}
-		</div>
+		</>
 	);
 });
 

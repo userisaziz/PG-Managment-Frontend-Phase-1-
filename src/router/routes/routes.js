@@ -14,6 +14,9 @@ import { UserDetail, UserManagementTable } from '../../views/afterAuth/UserManag
 import { TransactionTable, TransactionDetails } from '../../views/afterAuth/TransactionHistoryView';
 import AddTenants from '../../views/afterAuth/Tenants/AddTenants/AddTenants';
 import CRM from '../../views/afterAuth/CRM/CRM';
+import Hostels from '../../views/afterAuth/Hostels.jsx/HostelView';
+import AllHostels from '../../views/afterAuth/Hostels.jsx/AllHostels/AllHostels';
+import TenantsTable from '../../views/afterAuth/Tenants/TenantsTable/TenantsTable';
 const LoginLayout = React.lazy(() => import(`../../layouts/LoginLayout/LoginLayout`));
 
 const router = createBrowserRouter([
@@ -58,7 +61,7 @@ const router = createBrowserRouter([
 				children: [
 					{
 						index: true,
-						element: <UserManagementTable />,
+						element: <TenantsTable />,
 					},
 					{
 						path: pathname.USER_DETAIL,
@@ -89,17 +92,17 @@ const router = createBrowserRouter([
 				],
 			},
 			{
-				path: pathname.TRANSACTION_HISTORY,
-				element: <TransactionHistory />,
+				path: pathname.HOSTELS,
+				element: <Hostels />,
 				children: [
 					{
 						index: true,
-						element: <TransactionTable />,
+						element: <AllHostels />,
 					},
-					{
-						path: pathname.TRANSACTION_DETAILS,
-						element: <TransactionDetails />,
-					},
+					// {
+					// 	path: pathname.TRANSACTION_DETAILS,
+					// 	element: <TransactionDetails />,
+					// },
 				],
 			},
 			{

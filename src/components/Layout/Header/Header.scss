@@ -4,14 +4,15 @@
 	width: 100%;
 	padding: 14px 22px;
 	display: flex;
-	background-color: $color-white-100;
+	// background-color: $color-black-100;
+	background-color: $color-black-100;
 	justify-content: end;
 	align-items: center;
 	gap: 2rem;
 	position: fixed;
 	top: 0;
 	z-index: $zIndex-header;
-	border-bottom: 1px solid #cac9c94d;
+	border-bottom: 1px solid #cac9c900;
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;

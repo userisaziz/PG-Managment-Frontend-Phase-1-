@@ -6,7 +6,7 @@
 	align-items: center;
 	justify-content: end;
 	flex-direction: row;
-	background-color: #fff;
+	background-color: $color-black-100;
 
 	&--Actions {
 		width: 100%;
@@ -107,5 +107,5 @@
 
 .Pagination .active {
 	background-color: $color-dark-red-400;
-	color: $color-white-100;
+	color: $color-black-100;
 }

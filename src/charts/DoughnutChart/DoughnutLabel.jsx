@@ -5,7 +5,7 @@ const DoughnutLabel = (props) => {
 	const { data } = props;
 	const labels = data?.labels?.map((label, index) => ({
 		label: label,
-		backgroundColor: data?.datasets[0]?.backgroundColor[index],
+		// backgroundColor: data?.datasets[0]?.backgroundColor[index],
 	}));
 
 	return (

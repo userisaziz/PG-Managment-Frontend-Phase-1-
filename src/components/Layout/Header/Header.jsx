@@ -18,9 +18,7 @@ const Header = (props) => {
 
 	return (
 		<header className="Header">
-			<div className="Header--Left">
-				<LogoWithBrandName />
-			</div>
+			<div className="Header--Left">{/* <LogoWithBrandName /> */}</div>
 			<div className="Header--Right">
 				<Notification />
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 
-const HostelView = () => {
+const Hostels = () => {
 	return (
 		<main>
 			<Outlet />
@@ -9,4 +9,4 @@ const HostelView = () => {
 	);
 };
 
-export default HostelView;
+export default Hostels;

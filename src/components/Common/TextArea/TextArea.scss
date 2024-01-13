@@ -9,12 +9,12 @@
 		padding: 1.6rem 2rem;
 		border: 0.1rem solid $color-grey-400;
 		resize: none;
-		background-color: $color-white-100;
+		background-color: $color-black-100;
 		outline: none;
 	}
 	&--Error {
 		border: 1px solid $color-red-800;
-		background-color: $color-white-100;
+		background-color: $color-black-100;
 		caret-color: $color-red-800;
 		::placeholder {
 			color: $color-red-800;

@@ -8,7 +8,7 @@
 	outline: none;
 	border: none;
 	background-color: $color-dark-red-400;
-	color: $color-white-100;
+	color: $color-black-100;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -80,13 +80,13 @@
 
 	&--Primary {
 		background-color: $color-dark-red-400;
-		color: $color-white-100;
+		color: $color-black-100;
 	}
 
 	&--Secondary {
 		border: 1px solid $color-grey-400;
 		color: $color-grey-600;
-		background-color: $color-white-100;
+		background-color: $color-black-100;
 	}
 	&--Link {
 		font-weight: 600;

@@ -4,7 +4,7 @@
 	width: 25vw;
 	height: fit-content;
 	position: absolute;
-	background-color: $color-white-100;
+	background-color: $color-black-100;
 	margin-top: 6rem;
 	border-radius: 1rem;
 	z-index: 1000;
@@ -133,7 +133,7 @@
 }
 
 .Notifications ::-webkit-scrollbar-track {
-	background-color: $color-white-100;
+	background-color: $color-black-100;
 	border-radius: 10px;
 }
 

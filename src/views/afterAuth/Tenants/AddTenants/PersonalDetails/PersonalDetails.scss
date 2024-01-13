@@ -1,0 +1,33 @@
+@import '../../../../../styles/sass/variables';
+
+.PersonalDetails {
+	&--Name {
+		font-size: 2.8rem;
+		font-weight: 600;
+		color: $color-primary;
+		// padding-bottom: 20px;
+	}
+
+	&--CodeNumber {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #b0b0b0;
+		font-size: 1.6rem;
+		border-radius: 10px;
+		background: $new-black-50;
+		padding: 1rem 4.5rem;
+	}
+	&--MobileDiv {
+		display: flex;
+		gap: 20px;
+	}
+	&--Dropdown {
+		width: 30%;
+	}
+	&--StepButtons {
+		display: flex;
+		justify-content: end;
+		gap: 20px;
+	}
+}

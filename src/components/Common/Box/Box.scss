@@ -12,6 +12,8 @@
 	background-color: $color-black-100;
 	&--dark {
 		box-shadow: 0rem 0.6rem 1.2rem 0rem rgba(0, 0, 0, 0.2);
-		background-color: $color-black-100;
+		background-color: $color-black-50;
+		padding: 1.6rem 2rem;
+		margin: 1rem;
 	}
 }

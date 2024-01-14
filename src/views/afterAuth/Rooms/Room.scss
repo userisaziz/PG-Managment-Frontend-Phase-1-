@@ -1,0 +1,33 @@
+@import '../../../styles/sass/variables';
+.Room {
+	&--Beds {
+		display: flex;
+		align-items: center;
+	}
+	&--Header {
+		display: flex;
+		// justify-content: center;
+		align-items: center;
+		gap: 10px;
+	}
+	&--Filter {
+		box-shadow: 0rem 0.6rem 1.2rem 0rem rgba(0, 0, 0, 0.2);
+		background-color: $color-black-50;
+		padding: 10px;
+		border-radius: 12px;
+	}
+	&--AvailableRoom {
+		display: flex;
+		// justify-content: center;
+		// align-items: center;
+		// width: 100%;
+	}
+	&--Title {
+		// width: max-content;
+		font-size: 1.6rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 30px;
+		color: $color-primary;
+	}
+}

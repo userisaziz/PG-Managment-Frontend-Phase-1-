@@ -15,7 +15,7 @@
 	font-weight: 400;
 	text-align: center;
 	font-weight: 600;
-
+	background-color: $color-primary;
 	&--Active {
 		background: $color-dark-red-100;
 		color: $color-dark-red-500;
@@ -23,7 +23,8 @@
 
 	&--Inactive {
 		border: 1px solid $color-grey-400;
-		background: transparent;
+		background-color: $color-primary;
+		// background: transparent;
 	}
 }
 

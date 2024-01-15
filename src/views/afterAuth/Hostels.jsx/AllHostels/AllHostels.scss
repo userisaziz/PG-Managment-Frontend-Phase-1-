@@ -3,13 +3,27 @@
 		display: flex;
 		gap: 10px;
 	}
+	&--Beds {
+		display: flex;
+	}
 	&--Sections {
 		display: flex;
 	}
 	&--MiddleSection {
 		display: flex;
-		gap: 10px;
+		// gap: 10px;
 		flex-direction: column;
+		flex-grow: 1;
+	}
+	&--InlineValue {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		justify-content: space-between;
+	}
+	&--Expected {
+		display: flex;
+		justify-content: space-between;
 	}
 	&--RightSection {
 		display: flex;

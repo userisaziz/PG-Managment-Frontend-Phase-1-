@@ -34,6 +34,7 @@ import Facebook from './Facebook/Facebook.jsx';
 import Cross from './Cross/Cross.jsx';
 import Globe from './Globe/Globe.jsx';
 import LeftArrow from './LeftArrow/LeftArrow.jsx';
+import Filter from './Filter/Filter';
 
 export {
 	ArrowLeft,
@@ -41,6 +42,7 @@ export {
 	BackwardIcon,
 	ChartLabel,
 	Delete,
+	Filter,
 	PreLoader,
 	UploadFile,
 	UserIcon,

@@ -13,5 +13,7 @@ export const pathname = {
 	TRANSACTION_DETAILS: '/slm-admin/dashboard/transaction-history/:id',
 	CONTENT_MANAGEMENT: '/slm-admin/dashboard/content-management',
 	USER_DETAIL: '/slm-admin/dashboard/user-management/user-detail',
-	HOSTELS: 'slm-admin/dashboard/hostel-management',
+	HOSTELS: 'slm-admin/dashboard/hostels-management',
+	ROOMS: 'slm-admin/dashboard/rooms-management',
+	REPORTS: 'slm-admin/dashboard/reports',
 };

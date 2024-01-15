@@ -24,22 +24,22 @@ const SideMenuContent = () => [
 	},
 
 	{
-		title: 'CRM',
-		path: pathname.CONTENT_MANAGEMENT,
+		title: 'Rooms',
+		path: pathname.ROOMS,
 		key: 'content-management',
 		icon: <ContentManagement />,
 	},
 
 	{
-		title: 'Users',
+		title: 'Expenses',
 		path: pathname.HELP_DESK,
 		key: 'help-desk',
 		icon: <HelpDesk />,
 	},
 	{
-		title: 'Meals',
-		path: pathname.HELP_DESK,
-		key: 'help-desk',
+		title: 'Reports',
+		path: pathname.REPORTS,
+		key: 'reports',
 		icon: <HelpDesk />,
 	},
 ];

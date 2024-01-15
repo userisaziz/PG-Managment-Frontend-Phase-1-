@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import { ContentManagement, Dashboard, HelpDesk, Login, TransactionHistory, UserManagement } from '../../pages';
+import { Dashboard, HelpDesk, Login, TransactionHistory, UserManagement } from '../../pages';
 import { pathname } from '../pathname';
 import Components from '../../views/beforeAuth/components';
 
@@ -17,6 +17,8 @@ import CRM from '../../views/afterAuth/CRM/CRM';
 import Hostels from '../../views/afterAuth/Hostels.jsx/HostelView';
 import AllHostels from '../../views/afterAuth/Hostels.jsx/AllHostels/AllHostels';
 import TenantsTable from '../../views/afterAuth/Tenants/TenantsTable/TenantsTable';
+import Rooms from '../../views/afterAuth/Rooms/Rooms';
+import Reports from '../../views/afterAuth/Reports/Reports';
 const LoginLayout = React.lazy(() => import(`../../layouts/LoginLayout/LoginLayout`));
 
 const router = createBrowserRouter([
@@ -106,12 +108,26 @@ const router = createBrowserRouter([
 				],
 			},
 			{
-				path: pathname.CONTENT_MANAGEMENT,
-				element: <CRM />,
+				path: pathname.ROOMS,
+				element: <Rooms />,
 				children: [
 					{
 						index: true,
-						element: <CRM />,
+						element: <Rooms />,
+					},
+					// {
+					// 	path: pathname.TRANSACTION_DETAILS,
+					// 	element: <TransactionDetails />,
+					// },
+				],
+			},
+			{
+				path: pathname.REPORTS,
+				element: <Reports />,
+				children: [
+					{
+						index: true,
+						element: <Reports />,
 					},
 					// {
 					// 	path: pathname.TRANSACTION_DETAILS,

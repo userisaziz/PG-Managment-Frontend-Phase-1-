@@ -4,6 +4,7 @@ import './Room.scss';
 import SearchRoom from './SearchRoom/SearchRoom';
 import { Filter } from '../../../assets/icon';
 import RoomBadge from '../../../components/Common/RoomBadge/RoomBadge';
+import { Card, Tabs } from '../../../components/Common';
 const Rooms = () => {
 	const [filterModal, setFilterModal] = useState();
 	return (
@@ -26,7 +27,8 @@ const Rooms = () => {
 					Add Room
 				</Button>
 			</Box> */}
-			<Box className="Room--Beds">
+			{/* <Tabs spans={['Search', 'Add']} /> */}
+			{/* <Box className="Room--Beds">
 				<Box dark={true}>
 					<ValueField label="Total Rooms">300</ValueField>
 				</Box>
@@ -39,19 +41,40 @@ const Rooms = () => {
 				<Box dark={true}>
 					<ValueField label="Unoccupied Beds">80</ValueField>
 				</Box>
-			</Box>
+			</Box> */}
 
 			{/* <Box>
 				<SearchRoom />
 			</Box> */}
 			<Box className="Room--Box">
-				<div className="Room--AvailableRoom">
+				{/* <div className="Room--AvailableRoom">
 					<Dropdown placeholder={'Select Hostel'} />
 					<Dropdown placeholder={'Select Floor'} />
+				</div> */}
+				{/* <div dark={true} className="Room--AllRooms"> */}
+				<div dark={true} className={'Room--Header'}>
+					<SearchBar placeholder={'Search Room Number'} />
+					<div
+						dark={true}
+						className="Room--Filter"
+						onClick={() => {
+							setFilterModal(true);
+						}}
+					>
+						<Filter />
+					</div>
+					<Button
+					// variant={'Secondary'}
+					>
+						Add Room
+					</Button>
 				</div>
-				<div dark={true} className="Room--AllRooms">
-					{/* <Typography className="AddTenants--Name">Hostel 1</Typography>
-					<Typography className="AddTenants--Name">Floor 2</Typography> */}
+
+				<Box dark={true} className={'Room--Card'}>
+					<div className="Room--TitleBox">
+						<Typography className="Room--Title">Hostel 1</Typography>
+						<Typography className="Room--SubTitle">Floor 2</Typography>
+					</div>
 					<div className="Room--AllRoomBadge">
 						<RoomBadge />
 						<RoomBadge />
@@ -66,7 +89,9 @@ const Rooms = () => {
 						<RoomBadge />
 						<RoomBadge />
 					</div>
-				</div>
+				</Box>
+
+				{/* </div> */}
 			</Box>
 
 			<Modal
@@ -75,6 +100,8 @@ const Rooms = () => {
 				onClose={setFilterModal}
 				className="ProfileDropdown--Modal"
 			>
+				<Dropdown placeholder={'Select Hostel'} />
+				<Dropdown placeholder={'Select Floor'} />
 				<div className="ProfileDropdown--Buttons">
 					<Button
 						variant="secondary"

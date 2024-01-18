@@ -29,18 +29,34 @@
 		// width: 100%;
 	}
 	&--Title {
-		// width: max-content;
-		font-size: 1.6rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 30px;
 		color: $color-primary;
+		font-size: 2.6rem;
+		font-weight: 600;
+	}
+	&--SubTitle {
+		color: $color-primary;
+		font-size: 1.6rem;
+		font-weight: 400;
+	}
+	&--TitleBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		// padding: 20px;
+	}
+	&--Card {
+		display: flex;
+		flex-direction: column;
+		gap: 1.875rem;
+		margin: 0;
+		padding: 30px;
 	}
 	&--AllRooms {
 		// background: #fff;
 		padding: 50px;
-		width: 414px;
-		height: 301px;
+		// width: 414px;
+		// height: 301px;
 
 		border-radius: 31px;
 		background: #333;
@@ -51,9 +67,9 @@
 	}
 	&--AllRoomBadge {
 		display: grid;
-		grid-template-columns: repeat(8, 1fr);
-		grid-template-rows: repeat(8, 1fr);
-		gap: 10px;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(auto, 1fr);
+		gap: 24px;
 		width: 100%;
 	}
 }

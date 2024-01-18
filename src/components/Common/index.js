@@ -35,14 +35,17 @@ import PaymentHistory from './PaymentHistory/PaymentHistory.jsx';
 import RadioGroup from './RadioGroup/RadioGroup.jsx';
 import RadioButton from './RadioButton/RadioButton.jsx';
 import CustomSelect from './CustomSelect/CustomSelect.jsx';
-
+import Tabs from './Tabs/Tabs';
+d
 export {
 	Box,
 	Button,
 	Checkbox,
+	
 	CustomSelect,
 	DashboardCard,
 	Input,
+	Tabs,
 	Modal,
 	OTPInput,
 	Table,

@@ -3,11 +3,12 @@ import { Box, Button, Chip, Dropdown, Modal, SearchBar, Typography, ValueField }
 import './Room.scss';
 import SearchRoom from './SearchRoom/SearchRoom';
 import { Filter } from '../../../assets/icon';
+import RoomBadge from '../../../components/Common/RoomBadge/RoomBadge';
 const Rooms = () => {
 	const [filterModal, setFilterModal] = useState();
 	return (
 		<div>
-			<Box className="Room--Header">
+			{/* <Box className="Room--Header">
 				<SearchBar placeholder="Search Room" />
 
 				<div
@@ -24,7 +25,7 @@ const Rooms = () => {
 				>
 					Add Room
 				</Button>
-			</Box>
+			</Box> */}
 			<Box className="Room--Beds">
 				<Box dark={true}>
 					<ValueField label="Total Rooms">300</ValueField>
@@ -43,14 +44,29 @@ const Rooms = () => {
 			{/* <Box>
 				<SearchRoom />
 			</Box> */}
-			<Box>
+			<Box className="Room--Box">
 				<div className="Room--AvailableRoom">
-					<span className="PersonalDetails--CodeNumber">Hostel 1</span>
+					<Dropdown placeholder={'Select Hostel'} />
 					<Dropdown placeholder={'Select Floor'} />
 				</div>
-				<Box className={''} dark={true}>
-					{1}
-				</Box>
+				<div dark={true} className="Room--AllRooms">
+					{/* <Typography className="AddTenants--Name">Hostel 1</Typography>
+					<Typography className="AddTenants--Name">Floor 2</Typography> */}
+					<div className="Room--AllRoomBadge">
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+						<RoomBadge />
+					</div>
+				</div>
 			</Box>
 
 			<Modal

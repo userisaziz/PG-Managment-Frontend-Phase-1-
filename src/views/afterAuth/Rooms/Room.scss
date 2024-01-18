@@ -10,6 +10,11 @@
 		align-items: center;
 		gap: 10px;
 	}
+	&--Box {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
 	&--Filter {
 		box-shadow: 0rem 0.6rem 1.2rem 0rem rgba(0, 0, 0, 0.2);
 		background-color: $color-black-50;
@@ -18,6 +23,7 @@
 	}
 	&--AvailableRoom {
 		display: flex;
+		gap: 24px;
 		// justify-content: center;
 		// align-items: center;
 		// width: 100%;
@@ -29,5 +35,25 @@
 		font-weight: 600;
 		line-height: 30px;
 		color: $color-primary;
+	}
+	&--AllRooms {
+		// background: #fff;
+		padding: 50px;
+		width: 414px;
+		height: 301px;
+
+		border-radius: 31px;
+		background: #333;
+		box-shadow: 0px 4px 209px 0px rgba(0, 0, 0, 0.25);
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	&--AllRoomBadge {
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: repeat(8, 1fr);
+		gap: 10px;
+		width: 100%;
 	}
 }

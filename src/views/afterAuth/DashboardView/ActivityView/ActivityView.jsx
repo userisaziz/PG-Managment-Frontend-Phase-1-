@@ -3,6 +3,8 @@ import './ActivityView.scss';
 import { Chip, Download, Dropdown, Typography } from '../../../../components';
 import { LineChart } from '../../../../charts';
 
+import VerticalBar from '../../../../charts/VerticalBar/VerticalBar.jsx';
+
 const ActivityView = () => {
 	const [selectValue, setSelectValue] = useState('');
 	const [continentValue, setContinentValue] = useState('');
@@ -36,25 +38,28 @@ const ActivityView = () => {
 		labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 		datasets: [
 			{
-				label: 'Total users',
-				data: [9, 17, 3, 5, 10, 11, 56],
-				borderColor: '#2B9DEF',
+				label: 'Total Customer Interacted',
+
+				data: [100, 45, 18, 9, 33, 12, 98],
+				// borderColor: '#2B9DEF',
 				fill: true,
-				backgroundColor: 'rgba(103, 181, 253, 0.10)',
+				backgroundColor: '#2B9DEF',
 			},
 			{
-				label: 'Active users',
+				label: 'Total Sales Closed',
 				data: [15, 25, 40, 5, 22, 8, 70],
-				borderColor: '#FF6B6B',
+				// borderColor: '#FF6B6B',
 				fill: true,
-				backgroundColor: 'rgba(255, 107, 107, 0.10)',
+				// backgroundColor: 'rgba(255, 107, 107, 0.10)',
+				backgroundColor: '#FF6B6B',
 			},
 			{
-				label: 'Inactive users',
-				data: [26, 45, 18, 9, 33, 12, 98],
+				label: 'In Progress',
+				data: [15, 17, 3, 5, 10, 11, 56],
 				borderColor: '#FBC42E',
 				fill: true,
-				backgroundColor: 'rgba(251, 196, 46, 0.10)',
+				// backgroundColor: 'rgba(251, 196, 46, 0.10)',
+				backgroundColor: '#FBC42E',
 			},
 		],
 	};
@@ -62,21 +67,21 @@ const ActivityView = () => {
 		labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
 		datasets: [
 			{
-				label: 'Total users',
-				data: [9, 17, 3, 5, 10, 11, 56, 9, 17, 3, 5, 10],
+				label: 'In Progress',
+				data: [26, 45, 18, 9, 33, 12, 98, 9, 20, 3, 55, 23],
 				borderColor: '#2B9DEF',
 				fill: true,
 				backgroundColor: 'rgba(103, 181, 253, 0.10)',
 			},
 			{
-				label: 'Active users',
+				label: 'Total Sales Closed',
 				data: [15, 25, 40, 5, 22, 8, 70, 9, 12, 4, 7, 13],
 				borderColor: '#FF6B6B',
 				fill: true,
 				backgroundColor: 'rgba(255, 107, 107, 0.10)',
 			},
 			{
-				label: 'Inactive users',
+				label: 'Total Customer Interacted',
 				data: [26, 45, 18, 9, 33, 12, 98, 9, 20, 3, 55, 23],
 				borderColor: '#FBC42E',
 				fill: true,
@@ -92,7 +97,7 @@ const ActivityView = () => {
 	return (
 		<React.Fragment>
 			<div className="ActivityView--Header">
-				<Typography className="ActivityView--Title"> User Activity</Typography>
+				<Typography className="ActivityView--Title"> User Expenses</Typography>
 
 				<div className="ActivityView--RightHeader">
 					<div className="ActivityView--Chip">
@@ -106,7 +111,7 @@ const ActivityView = () => {
 					</div>
 
 					<Dropdown
-						placeholder="Select Continent"
+						placeholder="Select Store"
 						options={menu}
 						keyToRead="continent"
 						isRequired={true}
@@ -123,7 +128,7 @@ const ActivityView = () => {
 				</div>
 			</div>
 			{activeTab === 'Weekly' && (
-				<LineChart data={data} className="ActivityView--Line" verticalgrid={false} dashedBorder={true} />
+				<VerticalBar data={data} className="ActivityView--Line" verticalgrid={false} dashedBorder={true} />
 			)}
 
 			{activeTab === 'Monthly' && (

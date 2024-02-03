@@ -98,7 +98,9 @@ const DashboardView = () => {
 						/>
 					</div>
 					<div>
-						<Box>{/* <ActivityView /> */}</Box>
+						<Box>
+							<ActivityView />{' '}
+						</Box>
 					</div>
 				</section>
 

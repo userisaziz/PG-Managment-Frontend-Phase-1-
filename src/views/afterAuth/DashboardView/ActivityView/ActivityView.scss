@@ -5,6 +5,7 @@
 		display: flex;
 		align-items: center;
 		gap: 2rem;
+
 		justify-content: space-between;
 	}
 	&--Chip {
@@ -17,7 +18,7 @@
 		align-items: center;
 	}
 	&--Title {
-		color: $color-black-200;
+		color: #fff;
 		font-size: 1.6rem;
 		font-style: normal;
 		font-weight: 600;

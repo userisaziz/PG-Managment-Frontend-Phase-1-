@@ -30,8 +30,8 @@ const ProfileDetail = () => {
 			<div className="ProfileDetail--Header">
 				<Typography className="ProfileDetail--Title">General Details</Typography>
 				<div className="ProfileDetail--Chip">
-					<Chip label="Block Id" onClick={() => setBlockModal(true)} />
-					<Chip label="Remove Id" onClick={() => setRemoveModal(true)} />
+					<Chip label="Shift Tenant" onClick={() => setBlockModal(true)} />
+					<Chip label="Remove Tenant" onClick={() => setRemoveModal(true)} />
 				</div>
 			</div>
 			<div className="ProfileDetail--ImageContainer">
@@ -49,15 +49,15 @@ const ProfileDetail = () => {
 				<ValueField label="Date of birth">04-12-2000</ValueField>
 				<ValueField label="Continent">Asia</ValueField>
 			</div>
-			<Typography className="ProfileDetail--Title">Other Details</Typography>
+			{/* <Typography className="ProfileDetail--Title">Other Details</Typography>
 			<div className="ProfileDetail--OtherDetails">
 				<ValueField label="Bio">
 					Adventure-seeking traveler who loves exploring new cultures and cuisines.
 				</ValueField>
 				<Social />
 				<Interest data={['music', 'biryani', 'coffee', 'books', 'cricket']} />
-			</div>
-			<Questionaire data={faq} variant="Box" />
+			</div> */}
+			{/* <Questionaire data={faq} variant="Box" /> */}
 			<Modal
 				title={`Are you sure you want to remove ${data?.name} id from app?`}
 				isOpen={removeModal}

@@ -15,5 +15,7 @@ export const pathname = {
 	USER_DETAIL: '/slm-admin/dashboard/user-management/user-detail',
 	HOSTELS: 'slm-admin/dashboard/hostels-management',
 	ROOMS: 'slm-admin/dashboard/rooms-management',
+	TRANSACTIONS: 'slm-admin/dashboard/transactions-management',
+	FINANCE: 'slm-admin/dashboard/finance',
 	REPORTS: 'slm-admin/dashboard/reports',
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, PaymentHistory, Referral, Typography } from '../../../../../components';
+import { Box, PaymentHistory, Referral, Typography, ValueField } from '../../../../../components';
 import { Profile } from '../../../../../assets/images';
 import './SideContent.scss';
 
@@ -67,13 +67,17 @@ const SideContent = (props) => {
 			<Box className="SideContent--Box">
 				<Typography className="SideContent--Title">General Details</Typography>
 				<img src={Profile} alt="image" className="ProfileDetail--Image" />
+				<ValueField label="Room">102</ValueField>
+				<ValueField label="Sharing">2</ValueField>
+				<ValueField label="Meals">2</ValueField>
+				<ValueField label="Joining Date">23/02/2023</ValueField>
 			</Box>
-			<Box>
+			{/* <Box>
 				<PaymentHistory data={paymentData} />
-			</Box>
-			<Box>
+			</Box> */}
+			{/* <Box>
 				<Referral data={referralData} />
-			</Box>
+			</Box> */}
 		</div>
 	);
 };

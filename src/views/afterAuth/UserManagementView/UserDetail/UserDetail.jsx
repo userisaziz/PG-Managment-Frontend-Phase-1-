@@ -11,11 +11,11 @@ import SideContent from './SideContent/SideContent';
 const UserDetail = () => {
 	const location = useLocation();
 	const data = location?.state;
-	const types = ['Profile Detail', 'Use Time', 'Query Raised'];
+	const types = ['Profile Detail', 'Transactions'];
 
 	const [active, setActive] = useState(types[0]);
 
-	const customizeBoxSize = active === 'Query Raised' ? 'UserDetail--BoxFull' : 'UserDetail--Box';
+	const customizeBoxSize = active === 'Transactions' ? 'UserDetail--BoxFull' : 'UserDetail--Box';
 
 	const breadCrumbData = [
 		{ text: 'User Management', url: pathname.USER_MANAGEMENT },
@@ -26,14 +26,14 @@ const UserDetail = () => {
 			<Box className="UserDetail--BreadCrumb">
 				<Breadcrumb items={breadCrumbData} />
 			</Box>
-			<div className='UserDetail--Container'>
+			<div className="UserDetail--Container">
 				<Box className={customizeBoxSize}>
 					<Tab types={types} active={active} changeActive={setActive} className="UserDetail--Tab" />
 					{active === types[0] && <ProfileDetail />}
-					{active === types[1] && <UseTime />}
-					{active === types[2] && <QueryRaised />}
+					{/* {active === types[1] && <UseTime />} */}
+					{active === types[1] && <QueryRaised />}
 				</Box>
-				{active !== types[2] && <SideContent className='UserDetail--SideContent' />}
+				{active !== types[1] && <SideContent className="UserDetail--SideContent" />}
 			</div>
 		</div>
 	);

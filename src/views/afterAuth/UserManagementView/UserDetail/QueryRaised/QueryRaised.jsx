@@ -43,7 +43,11 @@ const QueryRaised = () => {
 		{ headerName: 'Status', field: 'status', cellRenderer: Status },
 		{ headerName: 'Attachment', field: 'attachment', cellRenderer: Attachment },
 	];
-	return <Table header={tableHeader} row={rowData} isFullWidth={true} />;
+	return (
+		<div className="Tenants--Transactions">
+			<Table header={tableHeader} row={rowData} isFullWidth={true} />;
+		</div>
+	);
 };
 
 export default QueryRaised;

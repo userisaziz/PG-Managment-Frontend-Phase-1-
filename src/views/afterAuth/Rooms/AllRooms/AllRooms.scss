@@ -1,0 +1,27 @@
+.AllRooms {
+	&--Dropdowns {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 24px;
+	}
+	&--Header {
+		display: flex;
+		gap: 24px;
+		margin-bottom: 24px;
+	}
+	&--Dropdown1 {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+		// flex: 1;
+	}
+	&--Dropdown2 {
+		// display: flex;
+		// flex: 1;
+	}
+	&--Charts {
+		display: flex;
+		gap: 24px;
+	}
+}

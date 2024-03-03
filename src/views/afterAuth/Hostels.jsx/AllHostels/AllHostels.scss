@@ -42,8 +42,32 @@
 		gap: 10px;
 	}
 	&--Cards {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr 1fr;
 		gap: 16px;
+	}
+	&--Card {
+		border-radius: 10px;
+		background: #111;
+		padding: 10px;
+	}
+	&--Title {
+		font-size: 1.4rem;
+		font-weight: 400;
+		line-height: 2rem;
+		color: #878787;
+	}
+	&--SubTitle {
+		font-size: 1.6rem;
+		font-weight: 400;
+		line-height: 2rem;
+		color: #f9f9f9;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-overflow: hidden;
+		word-wrap: break-word;
+		margin-top: 0.5rem;
 	}
 	&--Tenants {
 		display: flex;

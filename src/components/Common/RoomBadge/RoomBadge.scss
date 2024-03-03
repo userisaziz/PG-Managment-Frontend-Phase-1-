@@ -1,8 +1,13 @@
 .RoomBadge {
 	display: flex;
+	cursor: pointer;
 	gap: 16px;
 	flex-wrap: wrap;
+
 	width: 100%;
+	:hover {
+		text-decoration: underline;
+	}
 	&--Filled {
 		width: 53px;
 		height: 36px;

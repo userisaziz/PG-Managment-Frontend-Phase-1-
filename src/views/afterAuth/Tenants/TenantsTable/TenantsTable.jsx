@@ -10,6 +10,7 @@ import Gender from './Gender/Gender';
 import Status from './Status/Status';
 import { useNavigate } from 'react-router-dom';
 import { pathname } from '../../../../router/pathname';
+import { Filter } from '../../../../assets/icon';
 
 const TenantsTable = () => {
 	const navigateTo = useNavigate();
@@ -119,6 +120,7 @@ const TenantsTable = () => {
 						className="TenantsTable--Dropdown"
 					/>
 					<SearchBar placeholder="Search users" />
+					{/* <Filter /> */}
 					{/* <Download
 					className="TenantsTable--Download"
 					value={selectValue}

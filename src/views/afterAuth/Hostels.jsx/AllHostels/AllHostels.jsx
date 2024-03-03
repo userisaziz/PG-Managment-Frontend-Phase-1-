@@ -5,6 +5,7 @@ import './AllHostels.scss';
 import DoughnutChart2 from '../../../../charts/DoughnutChart/DougnutChart2';
 import LineChart2 from '../../../../charts/LineChart/LineChart2';
 import { UpArrow } from '../../../../assets/icon';
+
 const AllHostels = () => {
 	const doughnutData = {
 		labels: ['Filled', 'Vaccant'],
@@ -162,21 +163,21 @@ const AllHostels = () => {
 							</ValueField> */}
 						</div>
 						<div className="AllHostels--Cards">
-							<div className="FinanceHome--Card">
-								<Typography>{'Expenses'}</Typography>
-								<Typography>{'24'}</Typography>
+							<div className="AllHostels--Card">
+								<Typography className="AllHostels--Title">{'Expenses'}</Typography>
+								<Typography className="AllHostels--SubTitle">{'24'}</Typography>
 							</div>
-							<div className="FinanceHome--Card">
-								<Typography>{'Collected Amount'}</Typography>
-								<Typography>{'subTitle'}</Typography>
+							<div className="AllHostels--Card">
+								<Typography className="AllHostels--Title">{'Collected Amount'}</Typography>
+								<Typography className="AllHostels--SubTitle">{'subTitle'}</Typography>
 							</div>
-							<div className="FinanceHome--Card">
-								<Typography>{'Remaing Amount'}</Typography>
-								<Typography>{'subTitle'}</Typography>
+							<div className="AllHostels--Card">
+								<Typography className="AllHostels--Title">{'Remaing Amount'}</Typography>
+								<Typography className="AllHostels--SubTitle">{'subTitle'}</Typography>
 							</div>
-							<div className="FinanceHome--Card">
-								<Typography>{'Overdue Amount'}</Typography>
-								<Typography>{'subTitle'}</Typography>
+							<div className="AllHostels--Card">
+								<Typography className="AllHostels--Title">{'Overdue Amount'}</Typography>
+								<Typography className="AllHostels--SubTitle">{'subTitle'}</Typography>
 							</div>
 						</div>
 						{/* <div className="AllHostels--Expected">

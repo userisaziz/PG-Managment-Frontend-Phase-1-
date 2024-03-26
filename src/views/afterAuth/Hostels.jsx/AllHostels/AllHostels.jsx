@@ -165,7 +165,16 @@ const AllHostels = () => {
 						<div className="AllHostels--Cards">
 							<div className="AllHostels--Card">
 								<Typography className="AllHostels--Title">{'Expenses'}</Typography>
-								<Typography className="AllHostels--SubTitle">{'24'}</Typography>
+								<Typography
+								
+								
+								
+								
+								
+								
+								
+								
+								 className="AllHostels--SubTitle">{'24'}</Typography>
 							</div>
 							<div className="AllHostels--Card">
 								<Typography className="AllHostels--Title">{'Collected Amount'}</Typography>

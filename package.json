@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack-dev-server --port 4003 --hot --host 0.0.0.0",
+		"start": "webpack-dev-server --port 4004 --hot --host 0.0.0.0",
 		"prestart": "npm rebuild node-sass",
 		"build": "webpack --mode production",
 		"eslint": "eslint src/**/*.js src/**/*.jsx",

@@ -19,6 +19,11 @@ import AllHostels from '../../views/afterAuth/Hostels.jsx/AllHostels/AllHostels'
 import TenantsTable from '../../views/afterAuth/Tenants/TenantsTable/TenantsTable';
 import Rooms from '../../views/afterAuth/Rooms/Rooms';
 import Reports from '../../views/afterAuth/Reports/Reports';
+import FinanceView from '../../views/afterAuth/FinanceView/FinanceView';
+import FinanceHome from '../../views/afterAuth/FinanceView/FinanceHome/FinanceHome';
+import AllRooms from '../../views/afterAuth/Rooms/AllRooms/AllRooms';
+import TransactionView from '../../views/afterAuth/TransactionView/TransactionView';
+import TransactionHome from '../../views/afterAuth/TransactionView/TransactionHome/TransactionHome';
 const LoginLayout = React.lazy(() => import(`../../layouts/LoginLayout/LoginLayout`));
 
 const router = createBrowserRouter([
@@ -113,7 +118,35 @@ const router = createBrowserRouter([
 				children: [
 					{
 						index: true,
-						element: <Rooms />,
+						element: <AllRooms />,
+					},
+					// {
+					// 	path: pathname.TRANSACTION_DETAILS,
+					// 	element: <TransactionDetails />,
+					// },
+				],
+			},
+			{
+				path: pathname.TRANSACTIONS,
+				element: <TransactionView />,
+				children: [
+					{
+						index: true,
+						element: <TransactionHome />,
+					},
+					// {
+					// 	path: pathname.TRANSACTION_DETAILS,
+					// 	element: <TransactionDetails />,
+					// },
+				],
+			},
+			{
+				path: pathname.FINANCE,
+				element: <FinanceView />,
+				children: [
+					{
+						index: true,
+						element: <FinanceHome />,
 					},
 					// {
 					// 	path: pathname.TRANSACTION_DETAILS,

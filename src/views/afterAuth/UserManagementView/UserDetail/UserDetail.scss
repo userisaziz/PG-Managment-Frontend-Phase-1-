@@ -6,6 +6,7 @@
 	}
 	&--Container {
 		display: flex;
+		width: 100%;
 		justify-content: space-between;
 	}
 
@@ -20,5 +21,9 @@
 	}
 	&--SideContent {
 		width: 35%;
+	}
+	&--Transactions {
+		display: flex;
+		width: 100%;
 	}
 }

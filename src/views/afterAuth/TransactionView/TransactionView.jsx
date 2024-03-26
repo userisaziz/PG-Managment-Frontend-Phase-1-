@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-const Rooms = () => {
+const TransactionView = () => {
 	return (
 		<div>
 			<Outlet />
@@ -9,4 +9,4 @@ const Rooms = () => {
 	);
 };
 
-export default Rooms;
+export default TransactionView;

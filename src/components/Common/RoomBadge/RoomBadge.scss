@@ -1,0 +1,39 @@
+.RoomBadge {
+	display: flex;
+	cursor: pointer;
+	gap: 16px;
+	flex-wrap: wrap;
+
+	width: 100%;
+	:hover {
+		text-decoration: underline;
+	}
+	&--Filled {
+		width: 53px;
+		height: 36px;
+		flex-shrink: 0;
+		border-radius: 5px;
+		background: #f00;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&--Vacant {
+		width: 53px;
+		height: 36px;
+		flex-shrink: 0;
+		border-radius: 5px;
+		background: #00adb5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&--Title {
+		// color: #fff;
+		// font-size: 16px;
+		// font-style: normal;
+		// font-weight: 400;
+		// line-height: normal;
+	}
+}

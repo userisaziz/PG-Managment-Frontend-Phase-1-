@@ -1,8 +1,8 @@
-import React from 'react';
-import { Box, Button, DashboardCard, ProgressBar, ViewDetailsCard } from '../../../components/Common';
-import { Money, OpenBook, UserIcon } from '../../../assets/icon';
+import React, { useState } from 'react';
+import { Box, Button, Chip, DashboardCard, ProgressBar, Typography, ViewDetailsCard } from '../../../components/Common';
+import { Money, OpenBook, UpArrow, UserIcon } from '../../../assets/icon';
 import './DashboardView.scss';
-import { DoughnutChart } from '../../../charts';
+import { DoughnutChart, LineChart } from '../../../charts';
 import ActivityView from './ActivityView/ActivityView';
 import DashboardTable from './DashboardTable/DashboardTable';
 
@@ -72,7 +72,46 @@ const DashboardView = () => {
 			},
 		],
 	};
+	const [activeTab, setActiveTab] = useState('Daily');
 
+	const data = {
+		labels: ['12 am', '3 am', '6 am', '9 am', '12 pm', '3 pm', '6 pm', '9 pm', '12 am'],
+		datasets: [
+			{
+				label: 'Daily Time Usage',
+				data: [9, 17, 3, 5, 10, 11, 56, 10, 11, 7],
+				borderColor: '#2B9DEF',
+				fill: true,
+				backgroundColor: 'rgba(103, 181, 253, 0.10)',
+			},
+		],
+	};
+
+	const WeeklyData = {
+		labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+		datasets: [
+			{
+				label: 'Weekly Time Usage',
+				data: [9, 17, 3, 5, 10, 11, 56],
+				borderColor: '#2B9DEF',
+				fill: true,
+				backgroundColor: 'rgba(103, 181, 253, 0.10)',
+			},
+		],
+	};
+
+	const MonthlyData = {
+		labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+		datasets: [
+			{
+				label: 'Monthly Time Usage',
+				data: [9, 17, 3, 5, 10, 11, 56, 9, 17, 3, 5, 10],
+				borderColor: '#2B9DEF',
+				fill: true,
+				backgroundColor: 'rgba(103, 181, 253, 0.10)',
+			},
+		],
+	};
 	return (
 		<React.Fragment>
 			<div className="DashboardView--Divider">
@@ -93,12 +132,14 @@ const DashboardView = () => {
 						<DashboardCard
 							icon={<OpenBook />}
 							heading="995"
-							subheading="Total query resolved"
+							subheading="Total Expenses"
 							className="DashboardView--Cards"
 						/>
 					</div>
 					<div>
-						<Box>{/* <ActivityView /> */}</Box>
+						<Box>
+							<ActivityView />{' '}
+						</Box>
 					</div>
 				</section>
 
@@ -120,7 +161,69 @@ const DashboardView = () => {
 					<Box className="DashboardView--ContainerDoughnut">
 						<DoughnutChart data={ageCategoryData} title="Total Income" text="2.65 Lacs" />
 					</Box> */}
-					<Box></Box>
+					<Box>
+						<div className="UseTime">
+							<div className="UseTime--Header">
+								<Typography className="UseTime--Title"> Usage Time</Typography>
+								<div className="UseTime--Chip">
+									<Chip
+										label="Daily"
+										isActive={activeTab === 'Daily'}
+										onClick={() => setActiveTab('Daily')}
+									/>
+									<Chip
+										label="Weekly"
+										isActive={activeTab === 'Weekly'}
+										onClick={() => setActiveTab('Weekly')}
+									/>
+									<Chip
+										label="Monthly"
+										isActive={activeTab === 'Monthly'}
+										onClick={() => setActiveTab('Monthly')}
+									/>
+								</div>
+							</div>
+							{/* <DoughnutChart2
+								data={doughnutData}
+								title="Hostel 1"
+								text="750"
+								className="DashboardView--Labels"
+							/> */}
+							<div className="UseTime--TimeDataContent">
+								<Typography className="UseTime--Time">342 hrs</Typography>
+								<Typography className="UseTime--TimeData">
+									<UpArrow /> 23%
+								</Typography>
+								<Typography className="UseTime--TimeContent">Than Yesterday</Typography>
+							</div>
+
+							{activeTab === 'Daily' && (
+								<LineChart
+									data={data}
+									className="UseTime--Line"
+									verticalgrid={false}
+									dashedBorder={true}
+								/>
+							)}
+							{activeTab === 'Weekly' && (
+								<LineChart
+									data={WeeklyData}
+									className="UseTime--Line"
+									verticalgrid={false}
+									dashedBorder={true}
+								/>
+							)}
+
+							{activeTab === 'Monthly' && (
+								<LineChart
+									data={MonthlyData}
+									className="UseTime--Line"
+									verticalgrid={false}
+									dashedBorder={true}
+								/>
+							)}
+						</div>
+					</Box>
 				</div>
 				<Box className="DashboardView--Progress">
 					<ProgressBar progress={70} data={{ key: 'Asia', value: '35 lacs' }} />

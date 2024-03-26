@@ -1,0 +1,27 @@
+.FinanceHome {
+	&--Header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px 0;
+	}
+	&--CardContainer {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		gap: 16px;
+		flex: 1;
+	}
+	&--Card {
+		display: flex;
+		flex: 1;
+		height: 110px;
+		padding: 24px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+		flex-shrink: 0;
+		border-radius: 12px;
+		background: #282c35;
+	}
+}

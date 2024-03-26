@@ -17,7 +17,7 @@ const SideMenuContent = () => [
 	},
 
 	{
-		title: 'Hostels/PG',
+		title: 'Property Management',
 		path: pathname.HOSTELS,
 		key: 'hostel-management',
 		icon: <Transaction />,
@@ -29,10 +29,15 @@ const SideMenuContent = () => [
 		key: 'content-management',
 		icon: <ContentManagement />,
 	},
-
 	{
-		title: 'Expenses',
-		path: pathname.HELP_DESK,
+		title: 'Transactions',
+		path: pathname.TRANSACTIONS,
+		key: 'transactions',
+		icon: <HelpDesk />,
+	},
+	{
+		title: 'Finance',
+		path: pathname.FINANCE,
 		key: 'help-desk',
 		icon: <HelpDesk />,
 	},

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Button, Chip, Interest, SearchBar, Typography, ValueField } from '../../../../components';
 import { DoughnutChart, LineChart } from '../../../../charts';
 import './AllHostels.scss';
 import DoughnutChart2 from '../../../../charts/DoughnutChart/DougnutChart2';
 import LineChart2 from '../../../../charts/LineChart/LineChart2';
 import { UpArrow } from '../../../../assets/icon';
+import { getAllHostels } from '../Redux/actionCreator';
+import { useDispatch } from 'react-redux';
 
 const AllHostels = () => {
 	const doughnutData = {
@@ -62,6 +64,10 @@ const AllHostels = () => {
 			},
 		],
 	};
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(getAllHostels());
+	}, []);
 	return (
 		<div>
 			<Box className="AllHostels--Header">
@@ -165,16 +171,7 @@ const AllHostels = () => {
 						<div className="AllHostels--Cards">
 							<div className="AllHostels--Card">
 								<Typography className="AllHostels--Title">{'Expenses'}</Typography>
-								<Typography
-								
-								
-								
-								
-								
-								
-								
-								
-								 className="AllHostels--SubTitle">{'24'}</Typography>
+								<Typography className="AllHostels--SubTitle">{'24'}</Typography>
 							</div>
 							<div className="AllHostels--Card">
 								<Typography className="AllHostels--Title">{'Collected Amount'}</Typography>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Button, Download, Dropdown, SearchBar, Table, Typography } from '../../../../components';
 import './TenantsTable.scss';
 import Name from './Name/Name';
@@ -10,12 +10,15 @@ import Gender from './Gender/Gender';
 import Status from './Status/Status';
 import { useNavigate } from 'react-router-dom';
 import { pathname } from '../../../../router/pathname';
-import { Filter } from '../../../../assets/icon';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllTenantDetails } from '../Redux/actionCreator';
 
 const TenantsTable = () => {
 	const navigateTo = useNavigate();
 	const [selectValue, setSelectValue] = useState('');
 	const [continentValue, setContinentValue] = useState('');
+	const { tenants } = useSelector((state) => state);
+	const { allTenantsDetails, loading } = tenants;
 
 	const menu = [
 		{
@@ -28,77 +31,28 @@ const TenantsTable = () => {
 			continent: 'Phone Number',
 		},
 	];
-	const rowData = [
-		{
-			s_no: 1,
-			name: 'Abhishek shrivastava',
-			date: '12-04-2023, 11:59 pm',
-			country: 'India',
-			contact: '9876543445',
-			continent: '01',
-			gender: 'male',
-			status: 'false',
-		},
-		{
-			s_no: 1,
-			name: 'Apurva',
-			date: '12-04-2023, 11:59 pm',
-			country: 'India',
-			contact: '9876543445',
-			continent: '01',
-			gender: 'female',
-			status: 'false',
-		},
-		{
-			s_no: 1,
-			name: 'Abhishek shrivastava',
-			date: '12-04-2023, 11:59 pm',
-			country: 'India',
-			contact: '9876543445',
-			continent: '01',
-			gender: 'male',
-			status: 'true',
-		},
-		{
-			s_no: 1,
-			name: 'Abhishek shrivastava',
-			date: '12-04-2023, 11:59 pm',
-			country: 'India',
-			contact: '9876543445',
-			continent: '01',
-			gender: 'male',
-			status: 'false',
-		},
-		{
-			s_no: 1,
-			name: 'Abhishek shrivastava',
-			date: '12-04-2023, 11:59 pm',
-			country: 'India',
-			contact: '9876543445',
-			continent: '01',
-			gender: 'male',
-			status: 'true',
-		},
-		{
-			s_no: 1,
-			name: 'Abhishek shrivastava',
-			date: '12-04-2023, 11:59 pm',
-			country: 'India',
-			contact: '9876543445',
-			continent: '01',
-			gender: 'male',
-			status: 'true',
-		},
-	];
+
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getAllTenantDetails());
+	}, []);
+
 	const tableHeader = [
-		{ headerName: 'SL No', field: 's_no', width: 100 },
-		{ headerName: 'Name', field: 'name', cellRenderer: Name },
-		{ headerName: 'Country', field: 'country', cellRenderer: Country },
-		{ headerName: 'Contact', field: 'contact', cellRenderer: Contact },
-		{ headerName: 'Continent', field: 'continent', cellRenderer: Continent },
-		{ headerName: 'Date of joining', field: 'date', cellRenderer: Date },
-		{ headerName: 'Gender', field: 'gender', cellRenderer: Gender },
-		{ headerName: 'Status', field: 'status', cellRenderer: Status },
+		{ headerName: 'Name', field: 'name' },
+		{ headerName: 'Email', field: 'email' },
+		{ headerName: 'Contact', field: 'contact' },
+		{ headerName: 'Emergency Contact Number', field: 'emergencyContactNumber' },
+		{ headerName: 'Aadhaar Number', field: 'adhaarNumber' },
+		{ headerName: 'State', field: 'permanentAddress.state' },
+		{ headerName: 'District', field: 'permanentAddress.district' },
+		{ headerName: 'Address Pincode', field: 'permanentAddress.pincode' },
+
+		{ headerName: 'Mobile Number', field: 'mobileNo' },
+		{ headerName: 'Type', field: 'type' },
+
+		{ headerName: 'Rented Date', field: 'rentedDate' },
+		{ headerName: 'Rent Type', field: 'rentType' },
 	];
 	const handleButtonClick = () => {
 		navigateTo(pathname.ADD_TENANT);
@@ -131,7 +85,7 @@ const TenantsTable = () => {
 					</Button>
 				</div>
 			</div>
-			<Table className="TenantsTable--Table" header={tableHeader} row={rowData} />
+			<Table className="TenantsTable--Table" header={tableHeader} row={allTenantsDetails} />
 		</Box>
 	);
 };

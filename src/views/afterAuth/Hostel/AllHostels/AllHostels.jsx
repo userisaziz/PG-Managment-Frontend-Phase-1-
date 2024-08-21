@@ -16,7 +16,40 @@ const AllHostels = () => {
 	const dispatch = useDispatch();
 	const navigateTo = useNavigate();
 	const { hostels } = useSelector((state) => state);
-	const { allHostels } = hostels;
+	// const { allHostels } = hostels;
+	const allHostels = [
+		{
+			_id: '66c3586f742fadca892c7a30',
+			name: 'RV PG',
+			pgType: 'Male',
+			rooms: [
+				{
+					_id: '66c358c2742fadca892c7a41',
+					roomNo: 1,
+				},
+				{
+					_id: '66c51418dce06b13397c481e',
+					roomNo: 23,
+				},
+			],
+			floors: [
+				{
+					_id: '66c3586f742fadca892c7a34',
+					floorNumber: 2,
+					rooms: ['66c51418dce06b13397c481e'],
+				},
+				{
+					_id: '66c3586f742fadca892c7a32',
+					floorNumber: 1,
+					rooms: ['66c358c2742fadca892c7a41'],
+				},
+			],
+			totalTenants: 0,
+			totalRooms: 2,
+			totalBeds: 3,
+			totalFloors: 2,
+		},
+	];
 	const handleButtonClick = () => {
 		navigateTo(pathname.ADD_HOSTELS);
 	};

@@ -19,7 +19,45 @@ import Name from '../RoomCellRenderers/Name';
 const AllRooms = () => {
 	const dispatch = useDispatch();
 	const { rooms } = useSelector((state) => state);
-	const { allRooms } = rooms;
+	// const { allRooms } = rooms;
+	const allRooms = [
+		{
+			_id: '66c358c2742fadca892c7a41',
+			roomNo: 1,
+			imageUrl: 'FF',
+			floorId: '66c3586f742fadca892c7a32',
+			hostelId: '66c3586f742fadca892c7a30',
+			tenants: [],
+			feeMonth: 1000,
+			feePerDay: 10,
+			maxOccupancy: 2,
+			currentOccupancy: 0,
+			createdAt: '2024-08-19T14:37:54.059Z',
+			updatedAt: '2024-08-19T14:37:54.059Z',
+			__v: 0,
+			hostelName: 'RV PG',
+			floorNumber: 1,
+			occupancyStatus: 'isEmpty',
+		},
+		{
+			_id: '66c51418dce06b13397c481e',
+			roomNo: 23,
+			imageUrl: 'dd',
+			floorId: '66c3586f742fadca892c7a34',
+			hostelId: '66c3586f742fadca892c7a30',
+			tenants: [],
+			feeMonth: 10000,
+			feePerDay: 1000,
+			maxOccupancy: 1,
+			currentOccupancy: 0,
+			createdAt: '2024-08-20T22:09:28.350Z',
+			updatedAt: '2024-08-20T22:09:28.350Z',
+			__v: 0,
+			hostelName: 'RV PG',
+			floorNumber: 2,
+			occupancyStatus: 'isEmpty',
+		},
+	];
 	const types = ['All', 'Empty', 'PartiallyOccupied', 'Occupied'];
 	const [selectedHostel, setselectedHostel] = useState();
 	const [selectedFloor, setselectedFloor] = useState();

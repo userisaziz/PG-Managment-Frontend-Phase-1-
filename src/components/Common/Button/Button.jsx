@@ -33,7 +33,8 @@ const Button = (props) => {
 				<React.Fragment>
 					{icon && <div className="Button--Icon">{icon}</div>}
 					{children}
-					{(suffix || CapitalizeFirstLetter(variant) === 'Link') && <Suffix type={variant} />}
+					{/* {(suffix || CapitalizeFirstLetter(variant) === 'Link') && <Suffix type={variant} />} */}
+					{suffix || CapitalizeFirstLetter(variant) === 'Link'}
 				</React.Fragment>
 			)}
 		</button>

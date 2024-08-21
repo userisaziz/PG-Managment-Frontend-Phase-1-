@@ -1,8 +1,8 @@
 import React from 'react';
-import { DashboardView } from '../../views';
+import Analytics from '../../views/afterAuth/Analytics/Analytics';
 
 const Dashboard = () => {
-	return <DashboardView />;
+	return <Analytics />;
 };
 
 export default Dashboard;

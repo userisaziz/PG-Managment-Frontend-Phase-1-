@@ -7,21 +7,14 @@
 	}
 	&--Header {
 		display: flex;
+		align-items: center;
 		gap: 24px;
-		margin-bottom: 24px;
+		flex-shrink: 0;
 	}
-	&--Dropdown1 {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 24px;
-		// flex: 1;
+	&--Table {
+		padding: 24px 0;
 	}
-	&--Dropdown2 {
-		// display: flex;
-		// flex: 1;
-	}
-	&--Charts {
-		display: flex;
-		gap: 24px;
+	&--Tabs {
+		margin: 16px 0 0 32px;
 	}
 }

@@ -9,21 +9,22 @@ import { ErrorBoundary } from '../../components';
 import ForgotPassword from '../../views/beforeAuth/LoginView/ForgotPassword/ForgotPassword';
 import ValidateOTP from '../../views/beforeAuth/LoginView/ValidateOTP/ValidateOTP';
 import AdminPanelLayout from '../../layouts/AdminPanelLayout/AdminPanelLayout';
-import { HelpDeskTable, ViewReport, ViewTicket } from '../../views/afterAuth/HelpDeskView';
-import { UserDetail, UserManagementTable } from '../../views/afterAuth/UserManagementView';
-import { TransactionTable, TransactionDetails } from '../../views/afterAuth/TransactionHistoryView';
+
 import AddTenants from '../../views/afterAuth/Tenants/AddTenants/AddTenants';
-import CRM from '../../views/afterAuth/CRM/CRM';
-import Hostels from '../../views/afterAuth/Hostels.jsx/HostelView';
-import AllHostels from '../../views/afterAuth/Hostels.jsx/AllHostels/AllHostels';
+import Hostels from '../../views/afterAuth/Hostel/HostelView';
+import AllHostels from '../../views/afterAuth/Hostel/AllHostels/AllHostels';
 import TenantsTable from '../../views/afterAuth/Tenants/TenantsTable/TenantsTable';
 import Rooms from '../../views/afterAuth/Rooms/Rooms';
-import Reports from '../../views/afterAuth/Reports/Reports';
-import FinanceView from '../../views/afterAuth/FinanceView/FinanceView';
-import FinanceHome from '../../views/afterAuth/FinanceView/FinanceHome/FinanceHome';
+
 import AllRooms from '../../views/afterAuth/Rooms/AllRooms/AllRooms';
+
+import AddHostel from '../../views/afterAuth/Hostel/AddHostel/AddHostel';
+import AddRoom from '../../views/afterAuth/Rooms/AddRoom/AddRoom';
+import BookRoom from '../../views/afterAuth/Rooms/BookRoom/BookRoom';
 import TransactionView from '../../views/afterAuth/TransactionView/TransactionView';
-import TransactionHome from '../../views/afterAuth/TransactionView/TransactionHome/TransactionHome';
+import HostelDetails from '../../views/afterAuth/Hostel/HostelDetails/HostelDetails';
+import RoomDetails from '../../views/afterAuth/Rooms/RoomDetails/RoomDetails';
+
 const LoginLayout = React.lazy(() => import(`../../layouts/LoginLayout/LoginLayout`));
 
 const router = createBrowserRouter([
@@ -62,41 +63,11 @@ const router = createBrowserRouter([
 				index: true,
 				element: <Dashboard />,
 			},
+
 			{
-				path: pathname.USER_MANAGEMENT,
-				element: <UserManagement />,
-				children: [
-					{
-						index: true,
-						element: <TenantsTable />,
-					},
-					{
-						path: pathname.USER_DETAIL,
-						element: <UserDetail />,
-					},
-					{
-						path: pathname.ADD_TENANT,
-						element: <AddTenants />,
-					},
-				],
-			},
-			{
-				path: pathname.HELP_DESK,
-				element: <HelpDesk />,
-				children: [
-					{
-						index: true,
-						element: <HelpDeskTable />,
-					},
-					{
-						path: pathname.VIEW_TICKET,
-						element: <ViewTicket />,
-					},
-					{
-						path: pathname.VIEW_REPORT,
-						element: <ViewReport />,
-					},
-				],
+				path: pathname.TRANSACTION_DETAILS,
+				element: <TransactionView />,
+
 			},
 			{
 				path: pathname.HOSTELS,
@@ -106,10 +77,15 @@ const router = createBrowserRouter([
 						index: true,
 						element: <AllHostels />,
 					},
-					// {
-					// 	path: pathname.TRANSACTION_DETAILS,
-					// 	element: <TransactionDetails />,
-					// },
+					{
+						path: pathname.ADD_HOSTELS,
+						element: <AddHostel />,
+					},
+					{
+						path: pathname.HOSTEL_DETAILS,
+						element: <HostelDetails />,
+					},
+
 				],
 			},
 			{
@@ -117,9 +93,23 @@ const router = createBrowserRouter([
 				element: <Rooms />,
 				children: [
 					{
-						index: true,
+						path: pathname.ROOMS_LIST,
 						element: <AllRooms />,
 					},
+
+					{
+						path: pathname.ADD_ROOM,
+						element: <AddRoom />,
+					},
+
+					{
+						path: pathname.BOOK_ROOM,
+						element: <BookRoom />,
+					},
+					{
+						path: pathname.ROOM_DETAILS,
+						element: <RoomDetails />
+					}
 					// {
 					// 	path: pathname.TRANSACTION_DETAILS,
 					// 	element: <TransactionDetails />,
@@ -127,45 +117,25 @@ const router = createBrowserRouter([
 				],
 			},
 			{
-				path: pathname.TRANSACTIONS,
-				element: <TransactionView />,
+				path: pathname.TENANTS,
+				element: <Rooms />,
 				children: [
 					{
-						index: true,
-						element: <TransactionHome />,
+						path: pathname.TENANTS_LIST,
+						element: <TenantsTable />,
 					},
-					// {
-					// 	path: pathname.TRANSACTION_DETAILS,
-					// 	element: <TransactionDetails />,
-					// },
-				],
-			},
-			{
-				path: pathname.FINANCE,
-				element: <FinanceView />,
-				children: [
+
 					{
-						index: true,
-						element: <FinanceHome />,
+						path: pathname.ADD_TENANT,
+						element: <AddTenants />,
 					},
-					// {
-					// 	path: pathname.TRANSACTION_DETAILS,
-					// 	element: <TransactionDetails />,
-					// },
-				],
-			},
-			{
-				path: pathname.REPORTS,
-				element: <Reports />,
-				children: [
+
 					{
-						index: true,
-						element: <Reports />,
+						path: pathname.BOOK_ROOM,
+						element: <BookRoom />,
 					},
-					// {
-					// 	path: pathname.TRANSACTION_DETAILS,
-					// 	element: <TransactionDetails />,
-					// },
+
+
 				],
 			},
 		],

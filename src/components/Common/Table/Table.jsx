@@ -2,12 +2,12 @@ import React, { useMemo, useRef, useEffect, useState, useCallback } from 'react'
 import { AgGridReact } from 'ag-grid-react';
 
 import Pagination from '../Pagination/Pagination';
-import { paginationLimit } from '../../../constant';
 
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 import './Table.scss';
+import { paginationLimit } from '../../../constant';
 
 const Table = (props) => {
 	const {
@@ -17,18 +17,19 @@ const Table = (props) => {
 		isLoading,
 		className,
 		totalItems = 0,
-		isFullWidth,
+		isFullWidth = true,
 		itemsPerPage = 0,
 		totalItemsFound = 0,
 		currentPageCount = 0,
-		onPaginateChange,
+		handlePageChange,
 		suppressPagination = false,
+		paginationLimit = paginationLimit,
 	} = props;
 
 	const gridRef = useRef(null);
-	const [goToPage, setGoToPage] = useState('');
+	// const [goToPage, setGoToPage] = useState('');
 	const [gridApi, setGridApi] = useState(null);
-	const [pageCount, setPageCount] = useState(1);
+	// const [pageCount, setPageCount] = useState(1);
 
 	const customClassName = `Table ${className}`;
 	const errorMessage = isError ? 'Something went wrong! Please try again.' : 'No rows to show';
@@ -45,7 +46,7 @@ const Table = (props) => {
 	};
 
 	const sx = {
-		marginBottom: '7rem',
+		// marginBottom: '7rem',
 	};
 
 	const defaultColDef = useMemo(() => {
@@ -66,40 +67,36 @@ const Table = (props) => {
 		gridRef.current.api.showNoRowsOverlay();
 	}, []);
 
-	// handle go to page functionality
-	useEffect(() => {
-		if (goToPage) {
-			setPageCount(goToPage);
-		}
-	}, [goToPage]);
+	// useEffect(() => {
+	// 	if (goToPage) {
+	// 		setPageCount(goToPage);
+	// 	}
+	// }, [goToPage]);
 
-	// handle pagination change
-	useEffect(() => {
-		if (pageCount && onPaginateChange) {
-			onPaginateChange({
-				page: Number(pageCount),
-				limit: Number(itemsPerPage),
-			});
-		}
-	}, [pageCount]);
+	// useEffect(() => {
+	// 	if (pageCount && onPaginateChange) {
+	// 		onPaginateChange({
+	// 			page: Number(pageCount),
+	// 			limit: Number(itemsPerPage),
+	// 		});
+	// 	}
+	// }, [pageCount]);
 
-	// handle current page count
-	useEffect(() => {
-		if (currentPageCount) {
-			setPageCount(currentPageCount);
-		}
-	}, [currentPageCount]);
+	// useEffect(() => {
+	// 	if (currentPageCount) {
+	// 		setPageCount(currentPageCount);
+	// 	}
+	// }, [currentPageCount]);
 
-	// handle table states
 	useEffect(() => {
 		const isGridApiLoaded = !!gridApi;
 
 		switch (true) {
 			case isLoading && isGridApiLoaded:
-				onShowLoadingOverlay(); // handle table loading state
+				onShowLoadingOverlay();
 				break;
 			case isError && isGridApiLoaded:
-				onShowNoRowsOverlay(); // handle table error state
+				onShowNoRowsOverlay();
 				break;
 			default:
 				break;
@@ -128,21 +125,7 @@ const Table = (props) => {
 					overlayLoadingTemplate={`<span className="ag-overlay-loading-center">Please wait while your rows are loading...</span>`}
 					overlayNoRowsTemplate={`<span>${errorMessage}</span>`}
 				/>
-				{!suppressPagination && (
-					<Pagination
-						goTo={goToPage}
-						isError={isError}
-						isLoading={isLoading}
-						totalItems={totalItems}
-						page={Number(pageCount)}
-						updateGoTo={setGoToPage}
-						updatePage={setPageCount}
-						itemsPerPage={itemsPerPage}
-						maxPageLimit={maxPageLimit}
-						totalItemsFound={totalItemsFound}
-						isDisabled={maxPageLimit === pageCount}
-					/>
-				)}
+				{!suppressPagination && <Pagination pageCount={totalItems} onPageChange={handlePageChange} />}
 			</div>
 		</div>
 	);

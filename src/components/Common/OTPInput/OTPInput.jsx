@@ -23,7 +23,7 @@ const OTPInput = ({ length = 6, onInput, className = '', InputClassName, isError
 	const handlePaste = (e) => {
 		e.preventDefault();
 		const pasteData = e.clipboardData.getData('text/plain').slice(0, length);
-		pasteData.split('').forEach((char, index) => {
+		pasteData.split('')?.forEach((char, index) => {
 			if (inputs[index] && char) {
 				inputs[index].current.value = char;
 				if (inputs[index + 1]) {

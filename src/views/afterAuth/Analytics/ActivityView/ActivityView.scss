@@ -1,0 +1,77 @@
+@import '../../../../styles/sass/variables';
+.ActivityView {
+	&--Header {
+		margin-bottom: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+
+		justify-content: space-between;
+	}
+	&--Chip {
+		display: flex;
+		gap: 1rem;
+	}
+	&--RightHeader {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+	&--Title {
+		color: #fff;
+		font-size: 1.6rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 2.2rem;
+	}
+	&--Download {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&--Dropdown {
+		min-width: 20rem !important;
+		width: 20rem;
+		height: 3.2rem;
+	}
+	&--Controls {
+		min-width: 20rem !important;
+		width: 20rem;
+		height: 3.2rem;
+	}
+	&--Line {
+		width: 100%;
+	}
+}
+
+/* src/views/afterAuth/Analytics/ActivityView/ActivityView.scss */
+// .dark-theme-menu {
+// 	border: 1px solid $color-grey-900;
+// 	background-color: $color-black-50;
+// 	border-radius: 0px 0px 8px 8px;
+// 	color: #fff;
+// }
+
+// .dark-theme-menu .ant-dropdown-menu-item {
+// 	border: 1px solid $color-grey-900;
+// 	background-color: $color-black-50;
+// 	border-radius: 0px 0px 8px 8px;
+// 	color: #fff;
+// 	color: #fff;
+// }
+
+// .dark-theme-menu .ant-dropdown-menu-item:hover {
+// 	background-color: #444;
+// }
+
+// .dark-theme-button {
+// 	border: 1px solid $color-grey-900;
+// 	background-color: $color-black-100;
+// 	font-size: 1.6rem;
+// 	color: $color-primary;
+// }
+
+// .dark-theme-button:hover {
+// 	color: $color-primary;
+// 	background-color: $color-grey-900;
+// }

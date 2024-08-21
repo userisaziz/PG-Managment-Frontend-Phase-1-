@@ -8,8 +8,13 @@ const DoughnutChart = (props) => {
 
 	const doughnutOptions = {
 		maintainAspectRatio: false,
+		font: {
+			size: 14,
+			family: "'Mulish', 'Helvetica', 'Arial', sans-serif",
+		},
+
 		responsive: true,
-		cutout: 60,
+		cutout: 70,
 		plugins: {
 			tooltip: {
 				enabled: false,
@@ -20,25 +25,25 @@ const DoughnutChart = (props) => {
 		},
 	};
 
-	const textCenter = {
-		id: 'textCenter',
-		beforeDatasetsDraw(chart) {
-			const { ctx } = chart;
-			ctx.save();
-			ctx.font = 'bolder 2rem Mulish san-serif';
-			ctx.fillStyle = '#000';
-			ctx.textAlign = 'center';
-			ctx.textBaseline = 'middle';
-			ctx.fillText(text, chart.getDatasetMeta(0).data[0].x, chart.getDatasetMeta(0).data[0].y);
-		},
-	};
+	// const textCenter = {
+	// 	id: 'textCenter',
+	// 	beforeDatasetsDraw(chart) {
+	// 		const { ctx } = chart;
+	// 		ctx.save();
+	// 		ctx.font = 'bolder 2rem Mulish san-serif';
+	// 		ctx.fillStyle = '#000';
+	// 		ctx.textAlign = 'center';
+	// 		ctx.textBaseline = 'middle';
+	// 		ctx.fillText(text, chart.getDatasetMeta(0).data[0].x, chart.getDatasetMeta(0).data[0].y);
+	// 	},
+	// };
 
 	return (
 		<React.Fragment>
 			<div className="Title">{title}</div>
 			<div className={className}>
 				<div className="DoughnutContainer">
-					<Doughnut data={data} options={doughnutOptions} plugins={[textCenter]} />
+					<Doughnut data={data} options={doughnutOptions} />
 				</div>
 				<div className="DoughnutLabels">
 					<DoughnutLabel data={data} />

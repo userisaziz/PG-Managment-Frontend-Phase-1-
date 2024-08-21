@@ -5,27 +5,35 @@
 		font-size: 2.8rem;
 		font-weight: 600;
 		color: $color-primary;
-		// padding-bottom: 20px;
+		padding-bottom: 20px;
 	}
 
 	&--CodeNumber {
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		flex-direction: column;
+		margin-top: 24px;
 		color: #b0b0b0;
 		font-size: 1.6rem;
 		border-radius: 10px;
 		background: $new-black-50;
+		height: 45px;
 		padding: 1rem 4.5rem;
 	}
+	&--EqualDiv {
+		display: grid;
+		gap: 1.6rem;
+		grid-template-columns: 1fr 1fr;
+	}
 	&--MobileDiv {
-		display: flex;
-		gap: 20px;
+		display: grid;
+		gap: 1.6rem;
+		grid-template-columns: 1fr 9fr;
 	}
 	&--Dropdown {
-		width: 30%;
+		// width: 30%;
 	}
 	&--StepButtons {
+		padding-top: 20px;
 		display: flex;
 		justify-content: end;
 		gap: 20px;

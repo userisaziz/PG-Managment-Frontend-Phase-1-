@@ -2,15 +2,15 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-// const BundleAnalyzerPlugin =
-// 	require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const dotenv = require('dotenv');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 // this will update the process.env with environment variables in .env file
 dotenv.config();
 
 const config = {
-	entry: ['react-hot-loader/patch', './src/index.js'],
+	entry: ['./src/index.js'],
 	mode: 'development',
 	output: {
 		path: path.resolve(__dirname, 'build'),
@@ -51,14 +51,13 @@ const config = {
 	},
 	devServer: {
 		historyApiFallback: true,
-		// disableHostCheck: true,
 		allowedHosts: 'all',
 		static: './build',
+		hot: true,
 	},
 	resolve: {
 		extensions: ['.webpack.js', '.web.js', '.mjs', '.js', '.jsx', '.json'],
 		alias: {
-			'react-dom': '@hot-loader/react-dom',
 			components: path.resolve(__dirname, 'src/components'),
 			asset: path.resolve(__dirname, 'src/Asset'),
 		},
@@ -70,6 +69,7 @@ const config = {
 			filename: 'index.html',
 		}),
 		new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/),
+		new ReactRefreshWebpackPlugin(),
 		// new BundleAnalyzerPlugin(),
 		new CopyPlugin({
 			patterns: [
@@ -84,7 +84,6 @@ const config = {
 	],
 	devtool: 'cheap-module-source-map',
 	optimization: {
-		// runtimeChunk: 'single',
 		splitChunks: {
 			cacheGroups: {
 				commons: {

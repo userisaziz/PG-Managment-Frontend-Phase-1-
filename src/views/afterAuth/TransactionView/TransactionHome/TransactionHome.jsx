@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Download, SearchBar, Tab, Table, Typography } from '../../../../components';
+import { Box, Button, Download, SearchBar, Tab, Table, Typography } from '../../../../components';
 
 import Paid from '../Paid/Paid';
 import { UnPaid } from '../Upaid/UnPaid';
@@ -24,6 +24,7 @@ const TransactionHome = () => {
 						<div className="HelpDeskTable--HeaderLeft">
 							<Typography className="HelpDeskTable--Title">Transactions</Typography>
 							<SearchBar className="HelpDeskTable--Search" />
+							<Button>Pay a Rent</Button>
 						</div>
 						<Download value={selectValue} onchange={onChange} className="HelpDeskTable--DownloadSelect" />
 					</div>

@@ -4,7 +4,7 @@ import { Bar } from 'react-chartjs-2';
 import './VerticalBar.scss'; // Assuming you have a separate stylesheet for vertical bar chart
 
 const VerticalBar = (props) => {
-	const { data, className, verticalgrid = true, dashedBorder = true } = props;
+	const { data, className, verticalgrid = true, dashedBorder = true, horizontalGrid = true } = props;
 
 	const dash = dashedBorder && { border: { dash: [15, 10] } };
 
@@ -33,6 +33,7 @@ const VerticalBar = (props) => {
 				},
 				...dash,
 				grid: {
+					display: horizontalGrid,
 					tickLength: 0,
 					color: '#F0F0F0',
 				},
@@ -46,10 +47,16 @@ const VerticalBar = (props) => {
 			legend: {
 				position: 'bottom',
 				labels: {
+					font: {
+						size: 14,
+						family: "'Mulish', 'Helvetica', 'Arial', sans-serif",
+					},
+
 					boxWidth: 8,
 					boxHeight: 8,
 					usePointStyle: true,
 					padding: 40,
+					color: '#fff',
 				},
 			},
 		},

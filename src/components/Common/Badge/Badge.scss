@@ -1,0 +1,63 @@
+.badge {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 10px;
+	gap: 10px;
+	width: max-content;
+	height: 26px;
+	border-radius: 16px;
+}
+
+.badge-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+}
+
+.badge-text {
+	font-weight: 400;
+	font-size: 1.4rem;
+}
+
+/* Classname styles based on props */
+.isEmpty {
+	// color: #ec6a5e;
+	// background: #feefed;
+	color: #feefed;
+	background-color: #ec6a5e;
+	.badge-dot {
+		background-color: #ec6a5e;
+	}
+}
+
+.isFull {
+	// color: #00aa74;
+	color: #e6f7ef;
+	// background: #e6f7ef;
+	background-color: #057954;
+	.badge-dot {
+		background-color: #057954;
+	}
+}
+
+.isUnavailable {
+	color: #8c8c8c;
+	color: #e6f7ef;
+	background: #f2f2f2;
+
+	.badge-dot {
+		background-color: #8c8c8c;
+	}
+}
+
+.isPartially {
+	// color: #dfa102;
+	color: #fff7e3;
+	// background: #fff7e3;
+	background-color: #dfa102;
+	.badge-dot {
+		background-color: #dfa102;
+	}
+}

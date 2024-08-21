@@ -35,8 +35,13 @@ import Cross from './Cross/Cross.jsx';
 import Globe from './Globe/Globe.jsx';
 import LeftArrow from './LeftArrow/LeftArrow.jsx';
 import Filter from './Filter/Filter';
-
+import DropDownClosed from './DropDownClosed/DropDownClosed.jsx';
+import DropDownUp from './DropDownUp/DropDownUp.jsx';
+import EditIcon from './Edit/Edit.jsx';
 export {
+	EditIcon,
+	DropDownUp,
+	DropDownClosed,
 	ArrowLeft,
 	ArrowRight,
 	BackwardIcon,

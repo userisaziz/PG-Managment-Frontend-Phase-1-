@@ -19,6 +19,7 @@ const Input = React.forwardRef((props, ref) => {
 		isDisabled,
 		onFocus,
 		onClick,
+		label,
 		...rest
 	} = props;
 
@@ -45,33 +46,33 @@ const Input = React.forwardRef((props, ref) => {
 	};
 
 	return (
-		<>
-			<div className={`${inputFieldErrorHandle} ${disabledClassName} ${inputFocusHandle}`}>
-				<input
-					{...rest}
-					ref={ref}
-					className={`Input--InputBox ${customClassName}`}
-					id={id}
-					type={type}
-					onChange={onChange}
-					onBlur={handleBlur}
-					required={isRequired}
-					value={value}
-					placeholder={placeholder}
-					readOnly={isReadOnly}
-					title=""
-					onFocus={handleFocus}
-					draggable={false}
-					disabled={isDisabled}
-					autoComplete="off"
-					onClick={onClick}
-				/>
-				{/* <p className="Input--Placeholder">{placeHolderValue}</p> */}
+		<div className="ComponentInput">
+			<label className="Input--Label">{label}</label>
+			<input
+				{...rest}
+				ref={ref}
+				// className={`Input--InputBox ${customClassName}`}
+				className={` ${customClassName} ${inputFieldErrorHandle} ${disabledClassName} ${inputFocusHandle}`}
+				id={id}
+				type={type}
+				onChange={onChange}
+				onBlur={handleBlur}
+				required={isRequired}
+				value={value}
+				placeholder={placeholder}
+				readOnly={isReadOnly}
+				title=""
+				onFocus={handleFocus}
+				draggable={false}
+				disabled={isDisabled}
+				autoComplete="off"
+				onClick={onClick}
+			/>
+			{/* <p className="Input--Placeholder">{placeHolderValue}</p> */}
+			{icon && <div className="Input--Icon">{icon}</div>}
 
-				{icon && <div className="Input--Icon">{icon}</div>}
-			</div>
 			{isError && <Typography className="Input--ErrorMessage">{errorMessage}</Typography>}
-		</>
+		</div>
 	);
 });
 

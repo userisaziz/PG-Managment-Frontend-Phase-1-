@@ -4,8 +4,11 @@
 	// width: 320px;
 	width: 100%;
 	min-height: 4rem;
-	position: relative;
 
+	&--Label {
+		font-weight: 500;
+		font-size: 1.6rem;
+	}
 	&--InputField {
 		width: 100%;
 		height: 4.5rem;
@@ -13,6 +16,7 @@
 		font-size: 1.6rem;
 		outline: none;
 		// margin: 1rem 0 0 0;
+		color: white;
 		border-radius: 0.8rem;
 		padding: 1rem 1rem;
 		border: 1px solid $color-grey-900;
@@ -86,7 +90,9 @@
 		height: 25px;
 		display: grid;
 		place-items: center;
-
+		position: absolute;
+		top: 50%;
+		right: 5%;
 		svg {
 			width: 100%;
 			height: 100%;
@@ -116,4 +122,10 @@
 		text-align: center;
 		padding: 0.2rem 0 0 0;
 	}
+}
+.ComponentInput {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	position: relative;
 }

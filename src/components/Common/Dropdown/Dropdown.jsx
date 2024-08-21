@@ -62,7 +62,7 @@ const Dropdown = (props) => {
 			? setSelectedValue({
 					value: item[keyToRead],
 					id: index,
-			  })
+				})
 			: setSelectedValue({ value: item, id: index });
 
 	const onItemClick = (item, index) => {
@@ -102,6 +102,7 @@ const Dropdown = (props) => {
 		<div className={customClassName}>
 			<Input
 				// {...props}
+
 				name={name}
 				id={id}
 				prefix={prefix}

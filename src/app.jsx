@@ -8,6 +8,7 @@ import { useReactQueryConfig } from './hooks';
 import { Loader } from './components';
 import { router } from './router';
 import './app.scss';
+import { Toaster } from 'sonner';
 
 const App = () => {
 	// const [queryClient] = useReactQueryConfig();
@@ -15,6 +16,13 @@ const App = () => {
 
 	return (
 		<QueryClientProvider client={queryClient}>
+			<Toaster
+				position="top-right"
+				richColors
+				toastOptions={{
+					className: 'Toaster',
+				}}
+			/>
 			<Suspense fallback={<Loader />}>
 				<RouterProvider router={router} />
 			</Suspense>

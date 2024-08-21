@@ -20,7 +20,7 @@ export const tenantSlice = createSlice({
 			.addCase(getAllTenantDetails.fulfilled, (state, action) => {
 				state.isError = false;
 				state.loading = false;
-				state.allTenantsDetails = action?.payload?.data;
+				state.allTenantsDetails = action?.payload;
 			})
 			.addCase(getAllTenantDetails.rejected, (state) => {
 				state.isError = true;

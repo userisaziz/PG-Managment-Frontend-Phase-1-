@@ -1,99 +1,67 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Button, CustomSelect, Dropdown, Input, Typography } from '../../../../../components';
 import { Wizard, useWizard } from 'react-use-wizard';
 import './PersonalDetails.scss';
+import { Formik, Form, Field, ErrorMessage } from 'formik'; // Import Formik components
 import NextPrevButton from '../../../../../components/Tenants/NextPrevButton';
-const PersonalDetails = () => {
-	const { handleStep, previousStep, nextStep } = useWizard();
-	const [input, setInput] = useState();
-	const [status, setStatus] = useState();
 
-	const handleChange = (e) => {
-		setInput(e.target.value);
-	};
+const PersonalDetails = () => {
+	const { handleStep } = useWizard();
+
 	const menu = [
 		{
-			labe: 'Student',
+			label: 'Student',
 			value: 'student',
 		},
 		{
-			labe: 'Employed',
+			label: 'Employed',
 			value: 'employed',
 		},
 		{
-			labe: 'Unemployed',
+			label: 'Unemployed',
 			value: 'unemployed',
 		},
 	];
+
 	return (
-		<>
-			<Typography className="PersonalDetails--Name">Personal Details</Typography>
-			<div className="PersonalDetails--MobileDiv">
-				<Input
-					placeholder="Name of the Tenant"
-					type="text"
-					isRequired={true}
-					onChange={handleChange}
-					// onBlur={handleOnBlur}
-					value={input}
-					// isDisabled={true}
-				/>
-				<Dropdown
-					className="PersonalDetails--Dropdown"
-					placeholder="Status"
-					options={menu}
-					keyToRead="value"
-					isRequired={true}
-					value={status}
-					onSelect={(value) => setStatus(value?.label)}
-				/>
-			</div>
+		<Formik
+			initialValues={{
+				name: '',
+				status: '',
+				contactNumber: '',
+				emergencyContact: '',
+				email: '',
+				aadharNumber: '',
+			}}
+			validate={(values) => {
+				const errors = {};
+				// Add validation logic here
+				return errors;
+			}}
+			onSubmit={(values, { setSubmitting }) => {
+				console.log('values: ', values);
 
-			<div className="PersonalDetails--MobileDiv">
-				<span className="PersonalDetails--CodeNumber">+91</span>
-				<Input
-					placeholder="Contact Number"
-					type="number"
-					isRequired={true}
-					onChange={handleChange}
-					// onBlur={handleOnBlur}
-					value={input}
-					// isDisabled={true}
-				/>
-			</div>
-			<div className="PersonalDetails--MobileDiv">
-				<span className="PersonalDetails--CodeNumber">+91</span>
-				<Input
-					placeholder="Emergency Contact Number"
-					type="number"
-					isRequired={true}
-					onChange={handleChange}
-					// onBlur={handleOnBlur}
-					value={input}
-					// isDisabled={true}
-				/>
-			</div>
+				setSubmitting(false);
+			}}
+		>
+			{({ isSubmitting }) => (
+				<Form>
+					<Typography className="PersonalDetails--Name">Personal Details</Typography>
+					<div className="PersonalDetails--EqualDiv">
+						<Field type="text" name="name" label="Name" component={Input} />
+						<Field name="status" label="Status" component={Dropdown} options={menu} keyToRead="value" />
+					</div>
+					<div className="PersonalDetails--EqualDiv">
+						<Field type="number" name="contactNumber" label="Contact Number" component={Input} />
+						<Field type="number" name="emergencyContact" label="Emergency Contact" component={Input} />
+					</div>
+					<Field type="email" name="email" label="Email" component={Input} />
+					<Field type="number" name="aadharNumber" label="Aadhar Number" component={Input} />
 
-			<Input
-				placeholder="Email"
-				type="email"
-				isRequired={true}
-				onChange={handleChange}
-				// onBlur={handleOnBlur}
-				value={input}
-				// isDisabled={true}
-			/>
-			<Input
-				placeholder="Aadhar Number"
-				type="number"
-				isRequired={true}
-				onChange={handleChange}
-				// onBlur={handleOnBlur}
-				value={input}
-				// isDisabled={true}
-			/>
-			<NextPrevButton />
-		</>
+					<NextPrevButton disabled={isSubmitting} />
+				</Form>
+			)}
+		</Formik>
 	);
 };
 

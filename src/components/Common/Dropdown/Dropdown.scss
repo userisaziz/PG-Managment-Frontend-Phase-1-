@@ -4,7 +4,9 @@
 	width: 100%;
 	height: auto;
 	position: relative;
-
+	&--Field {
+		color: white;
+	}
 	.Input {
 		width: 100%;
 		::selection {

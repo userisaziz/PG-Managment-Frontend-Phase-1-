@@ -7,12 +7,14 @@
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100vh;
-	// background-color: $color-black-100;
 	background-color: $color-black-100;
 	border-right: 1px solid $color-grey-900;
-	overflow-y: scroll;
-	@include disableScroll;
-
+	overflow-y: auto;
+	// @include disableScroll;
+	transition: all 0.3s ease;
+	&--Arrow {
+		cursor: pointer;
+	}
 	&--Body {
 		width: 100%;
 	}
@@ -25,6 +27,7 @@
 		gap: 1rem;
 		user-select: none;
 		color: $color-grey-100;
+
 		&:hover {
 			border-radius: 0.8rem;
 			background-color: $color-black-50;
@@ -33,8 +36,8 @@
 
 	&--Inactive {
 		width: 100%;
-		// background-color: $color-black-100;
 		background-color: $color-black-100;
+
 		&:hover {
 			cursor: pointer;
 		}
@@ -43,8 +46,8 @@
 	&--Active {
 		width: 100%;
 		border-radius: 0.8rem;
-		// background-color: $color-dark-red-100;
 		background-color: $color-grey-900;
+
 		h1 {
 			color: $color-grey-100;
 			font-weight: 600;
@@ -68,16 +71,43 @@
 
 	&--Logout {
 		width: 100%;
-		// background-color: $color-black-100;
 		background-color: $color-black-100;
+
 		&:hover {
 			cursor: pointer;
 		}
 	}
+
 	&--Image {
 		width: 6rem;
 		height: 5rem;
 		object-fit: contain;
 		text-align: center;
+	}
+
+	.SubMenu {
+		margin-top: 0.5rem;
+		background-color: $color-black-100;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+		.SubMenu--Active {
+			// Changed to match the active submenu class name
+			background-color: $color-grey-750; // Change background color for active submenu here
+			border-radius: 0.8rem;
+		}
+
+		.SubMenu--Item {
+			color: $color-grey-300;
+			font-size: 1.4rem;
+			padding: 1.2rem 2.4rem;
+			display: block;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: $color-grey-100;
+				border-radius: 0.8rem;
+				background-color: $color-black-50;
+			}
+		}
 	}
 }

@@ -10,17 +10,22 @@
 	background-color: $color-black-100;
 	border-right: 1px solid $color-grey-900;
 	overflow-y: auto;
-	// @include disableScroll;
 	transition: all 0.3s ease;
+
 	&--Arrow {
 		cursor: pointer;
 	}
-	&--Body {
+
+	&--Body,
+	&--Item,
+	&--Inactive,
+	&--Active,
+	&--Logout,
+	&--Image {
 		width: 100%;
 	}
 
 	&--Item {
-		width: 100%;
 		padding: 18px 24px;
 		display: flex;
 		align-items: center;
@@ -35,7 +40,6 @@
 	}
 
 	&--Inactive {
-		width: 100%;
 		background-color: $color-black-100;
 
 		&:hover {
@@ -44,15 +48,10 @@
 	}
 
 	&--Active {
-		width: 100%;
 		border-radius: 0.8rem;
 		background-color: $color-grey-900;
 
-		h1 {
-			color: $color-grey-100;
-			font-weight: 600;
-		}
-
+		h1,
 		svg {
 			color: $color-grey-100;
 		}
@@ -64,13 +63,11 @@
 
 	&--ItemText {
 		font-size: 1.6rem;
-		font-style: normal;
 		font-weight: 500;
 		line-height: 2.2rem;
 	}
 
 	&--Logout {
-		width: 100%;
 		background-color: $color-black-100;
 
 		&:hover {
@@ -90,13 +87,13 @@
 		background-color: $color-black-100;
 		overflow: hidden;
 		transition: max-height 0.3s ease;
-		.SubMenu--Active {
-			// Changed to match the active submenu class name
-			background-color: $color-grey-750; // Change background color for active submenu here
+
+		&--Active {
+			background-color: $color-grey-750;
 			border-radius: 0.8rem;
 		}
 
-		.SubMenu--Item {
+		&--Item {
 			color: $color-grey-300;
 			font-size: 1.4rem;
 			padding: 1.2rem 2.4rem;

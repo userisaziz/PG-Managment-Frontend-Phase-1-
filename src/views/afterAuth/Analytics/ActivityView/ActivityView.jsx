@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './ActivityView.scss';
-import { Chip, Download, Dropdown, Typography } from '../../../../components';
+import { Chip, Download, Tab, Typography } from '../../../../components';
 import { LineChart } from '../../../../charts';
-
+import { Dropdown, Menu, Button } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
 import VerticalBar from '../../../../charts/VerticalBar/VerticalBar.jsx';
+import { DownloadIcon } from '../../../../assets/icon/index.js';
+import { ReactDropdown } from '../../../../components/Common/index.js';
 
 const ActivityView = () => {
 	const [selectValue, setSelectValue] = useState('');
@@ -20,25 +23,13 @@ const ActivityView = () => {
 		{
 			continent: 'AFRICA',
 		},
-		{
-			continent: 'SOUTH_AMERICA',
-		},
-		{
-			continent: 'NORTH_AMERICA',
-		},
-		{
-			continent: 'AUSTRALIA',
-		},
-		{
-			continent: 'ANTARCTICA',
-		},
 	];
 
 	const data = {
 		labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 		datasets: [
 			{
-				label: 'Total Customer Interacted',
+				label: 'Salary Expenses',
 
 				data: [100, 45, 18, 9, 33, 12, 98],
 				// borderColor: '#2B9DEF',
@@ -46,7 +37,7 @@ const ActivityView = () => {
 				backgroundColor: '#2B9DEF',
 			},
 			{
-				label: 'Total Sales Closed',
+				label: 'Maintaince Expenses',
 				data: [15, 25, 40, 5, 22, 8, 70],
 				// borderColor: '#FF6B6B',
 				fill: true,
@@ -54,7 +45,7 @@ const ActivityView = () => {
 				backgroundColor: '#FF6B6B',
 			},
 			{
-				label: 'In Progress',
+				label: 'Miscellaneous',
 				data: [15, 17, 3, 5, 10, 11, 56],
 				borderColor: '#FBC42E',
 				fill: true,
@@ -94,10 +85,39 @@ const ActivityView = () => {
 		console.log(val);
 		setSelectValue(val);
 	};
+	const activityTypes = ['Expense', 'Income'];
+	const [active, setActive] = useState(activityTypes[0]);
+	const changeActivityType = () => {};
+
+	const menuItems = menu.map((item) => ({
+		value: item.continent,
+		label: item.continent,
+	}));
+
+	const handleMenuClick = (e) => {
+		setContinentValue(e.key);
+	};
+
+	const dropdownMenu = (
+		<Menu onClick={handleMenuClick} className="dark-theme-menu">
+			{menuItems.map((item) => (
+				<Menu.Item key={item.key}>{item.label}</Menu.Item>
+			))}
+		</Menu>
+	);
+
+	const downloadMenu = (
+		<Menu onClick={(e) => handleSelect(e.key)} className="dark-theme-menu">
+			<Menu.Item key="pdf">Download PDF</Menu.Item>
+			<Menu.Item key="csv">Download CSV</Menu.Item>
+		</Menu>
+	);
+
 	return (
 		<React.Fragment>
 			<div className="ActivityView--Header">
-				<Typography className="ActivityView--Title"> User Expenses</Typography>
+				<Tab active={active} types={activityTypes} changeActive={setActive} />
+				{/* <Typography className="ActivityView--Title"> User Expenses</Typography> */}
 
 				<div className="ActivityView--RightHeader">
 					<div className="ActivityView--Chip">
@@ -110,21 +130,17 @@ const ActivityView = () => {
 						<Chip label="Custom" isActive={activeTab === 'Custom'} onClick={() => setActiveTab('Custom')} />
 					</div>
 
-					<Dropdown
-						placeholder="Select Store"
-						options={menu}
-						keyToRead="continent"
-						isRequired={true}
-						value={continentValue}
-						onSelect={(value) => setContinentValue(value?.continent)}
-						className="ActivityView--Dropdown"
+					<ReactDropdown
+						options={menuItems}
+						className={'ActivityView--Dropdown'}
+						controlClassName={'ActivityView--Controls'}
 					/>
 
-					<Download
-						className="ActivityView--Download"
-						value={selectValue}
-						onchange={(value) => handleSelect(value)}
-					/>
+					<Dropdown overlay={downloadMenu} className="ActivityView--Download">
+						<div>
+							<DownloadIcon width={40} height={40} />
+						</div>
+					</Dropdown>
 				</div>
 			</div>
 			{activeTab === 'Weekly' && (
@@ -132,11 +148,16 @@ const ActivityView = () => {
 			)}
 
 			{activeTab === 'Monthly' && (
-				<LineChart data={MonthlyData} className="ActivityView--Line" verticalgrid={false} dashedBorder={true} />
+				<VerticalBar
+					data={MonthlyData}
+					className="ActivityView--Line"
+					verticalgrid={false}
+					dashedBorder={true}
+				/>
 			)}
 
 			{activeTab === 'Custom' && (
-				<LineChart data={data} className="ActivityView--Line" verticalgrid={false} dashedBorder={true} />
+				<VerticalBar data={data} className="ActivityView--Line" verticalgrid={false} dashedBorder={true} />
 			)}
 		</React.Fragment>
 	);

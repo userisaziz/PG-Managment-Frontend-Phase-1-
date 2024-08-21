@@ -25,32 +25,53 @@
 		line-height: 2.2rem;
 	}
 	&--Download {
-		.DropdownContainer {
-			&--DropdownHeader {
-				height: 3.2rem;
-				font-size: 1.4rem;
-				width: 15rem;
-				padding: 0rem 0.5rem;
-			}
-		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	&--Dropdown {
-		width: 14rem;
-		padding: 0rem 0.5rem;
-		.Input {
-			min-height: 3rem;
-			&--InputField {
-				font-size: 1.4rem;
-				margin: 0rem;
-				padding: 0rem 0.5rem;
-				height: 3.2rem;
-			}
-			&--InputBox {
-				font-size: 1.4rem;
-			}
-		}
+		min-width: 20rem !important;
+		width: 20rem;
+		height: 3.2rem;
+	}
+	&--Controls {
+		min-width: 20rem !important;
+		width: 20rem;
+		height: 3.2rem;
 	}
 	&--Line {
 		width: 100%;
 	}
 }
+
+/* src/views/afterAuth/Analytics/ActivityView/ActivityView.scss */
+// .dark-theme-menu {
+// 	border: 1px solid $color-grey-900;
+// 	background-color: $color-black-50;
+// 	border-radius: 0px 0px 8px 8px;
+// 	color: #fff;
+// }
+
+// .dark-theme-menu .ant-dropdown-menu-item {
+// 	border: 1px solid $color-grey-900;
+// 	background-color: $color-black-50;
+// 	border-radius: 0px 0px 8px 8px;
+// 	color: #fff;
+// 	color: #fff;
+// }
+
+// .dark-theme-menu .ant-dropdown-menu-item:hover {
+// 	background-color: #444;
+// }
+
+// .dark-theme-button {
+// 	border: 1px solid $color-grey-900;
+// 	background-color: $color-black-100;
+// 	font-size: 1.6rem;
+// 	color: $color-primary;
+// }
+
+// .dark-theme-button:hover {
+// 	color: $color-primary;
+// 	background-color: $color-grey-900;
+// }

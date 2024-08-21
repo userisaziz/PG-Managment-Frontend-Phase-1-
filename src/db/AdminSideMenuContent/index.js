@@ -11,26 +11,9 @@ const SideMenuContent = () => [
 		icon: <Dashboard />,
 		subMenu: [],
 	},
+
 	{
-		title: 'Tenants',
-		path: pathname.TENANTS,
-		key: 'user-management',
-		icon: <UserManagement />,
-		subMenu: [
-			{
-				title: 'Tenants List',
-				path: pathname.TENANTS_LIST,
-				key: 'tenants-list',
-			},
-			{
-				title: 'Add Tenant',
-				path: pathname.ADD_TENANT,
-				key: 'add-tenant',
-			},
-		],
-	},
-	{
-		title: 'Property Management',
+		title: 'Hostels',
 		path: pathname.HOSTELS,
 		key: 'hostel-management',
 		icon: <Transaction />,
@@ -71,25 +54,39 @@ const SideMenuContent = () => [
 		],
 	},
 	{
-		title: 'Transactions',
-		path: pathname.TRANSACTIONS,
-		key: 'transactions-management',
-		icon: <HelpDesk />,
+		title: 'Tenants',
+		path: pathname.TENANTS,
+		key: 'user-management',
+		icon: <UserManagement />,
 		subMenu: [
 			{
-				title: 'Transaction History',
-				path: pathname.TRANSACTION_HISTORY,
-				key: 'transaction-history',
+				title: 'Tenants List',
+				path: pathname.TENANTS_LIST,
+				key: 'tenants-list',
 			},
 			{
-				title: 'Add Transaction',
-				path: pathname.ADD_TRANSACTION,
-				key: 'add-transaction',
+				title: 'Add Tenant',
+				path: pathname.ADD_TENANT,
+				key: 'add-tenant',
 			},
 		],
 	},
 	{
-		title: 'Finance',
+		title: 'Transactions',
+		path: pathname.TRANSACTION_DETAILS,
+		key: 'transaction-history',
+		icon: <HelpDesk />,
+		subMenu: [
+			{
+				title: 'Transaction History',
+				path: pathname.TRANSACTION_DETAILS,
+				key: 'transaction-history',
+			},
+
+		],
+	},
+	{
+		title: 'Expense',
 		path: pathname.FINANCE,
 		key: 'finance',
 		icon: <HelpDesk />,

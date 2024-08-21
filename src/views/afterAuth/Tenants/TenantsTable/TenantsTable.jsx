@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { pathname } from '../../../../router/pathname';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTenantDetails } from '../Redux/actionCreator';
+import { ReactDropdown } from '../../../../components/Common';
 
 const TenantsTable = () => {
 	const navigateTo = useNavigate();
@@ -14,10 +15,8 @@ const TenantsTable = () => {
 	const { allTenantsDetails, loading } = tenants;
 
 	const menu = [
-		{ continent: 'Name' },
-		{ continent: 'Aadhar Number' },
-		{ continent: 'Phone Number' },
-		{ continent: 'Payment Date' },
+		{ label: 'Name', value: 'name' },
+		{ label: 'Aadhar Number', value: 'aadhar' },
 	];
 
 	const dispatch = useDispatch();
@@ -27,18 +26,13 @@ const TenantsTable = () => {
 	}, [dispatch]);
 
 	const tableHeader = [
-		{ title: 'Name', dataIndex: 'name', key: 'name' },
-		{ title: 'Email', dataIndex: 'email', key: 'email' },
-		{ title: 'Contact', dataIndex: 'contact', key: 'contact' },
-		{ title: 'Emergency Contact Number', dataIndex: 'emergencyContactNumber', key: 'emergencyContactNumber' },
-		{ title: 'Aadhaar Number', dataIndex: 'adhaarNumber', key: 'adhaarNumber' },
-		{ title: 'State', dataIndex: ['permanentAddress', 'state'], key: 'state' },
-		{ title: 'District', dataIndex: ['permanentAddress', 'district'], key: 'district' },
-		{ title: 'Address Pincode', dataIndex: ['permanentAddress', 'pincode'], key: 'pincode' },
-		{ title: 'Mobile Number', dataIndex: 'mobileNo', key: 'mobileNo' },
-		{ title: 'Type', dataIndex: 'type', key: 'type' },
-		{ title: 'Rented Date', dataIndex: 'rentedDate', key: 'rentedDate' },
-		{ title: 'Rent Type', dataIndex: 'rentType', key: 'rentType' },
+		{ headerName: 'Aadhaar Number', field: 'aadhaarNumber' },
+		// { headerName: 'Created At', field: 'createdAt' },
+		{ headerName: 'Email', field: 'email' },
+		{ headerName: 'Emergency Contact Number', field: 'emergencyContactNumber' },
+		// { headerName: 'Hostel ID', field: 'hostelId' },
+		{ headerName: 'Mobile No.', field: 'mobileNo' },
+		{ headerName: 'Name', field: 'name' },
 	];
 
 	const handleButtonClick = () => {
@@ -52,14 +46,15 @@ const TenantsTable = () => {
 					<Typography className="TenantsTable--Title">Tenant List</Typography>
 				</div>
 				<div className="TenantsTable--HeaderRight">
-					<Dropdown
+					<ReactDropdown
 						placeholder="Search by"
 						options={menu}
 						keyToRead="continent"
 						isRequired={true}
 						value={continentValue}
-						onSelect={(value) => setContinentValue(value?.continent)}
+						onChange={(value) => setContinentValue(value?.continent)}
 						className="TenantsTable--Dropdown"
+						// onFocus={handleHostels}
 					/>
 					<SearchBar placeholder="Search users" />
 					<Button variant="primary" onClick={handleButtonClick}>

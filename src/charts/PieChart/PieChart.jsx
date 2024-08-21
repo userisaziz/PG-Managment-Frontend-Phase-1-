@@ -1,12 +1,16 @@
 import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import DoughnutLabel from './DoughnutLabel';
-import './Doughnut.scss';
+import { Pie } from 'react-chartjs-2'; // Changed from Doughnut to Pie
+// import DoughnutLabel from './DoughnutLabel';
 
-const DoughnutChart = (props) => {
+import './PieChart.scss';
+import DoughnutLabel from '../DoughnutChart/DoughnutLabel';
+
+const PieChart = (props) => {
+	// Changed component name
 	const { data, className, title, text } = props;
 
-	const doughnutOptions = {
+	const pieOptions = {
+		// Changed variable name
 		maintainAspectRatio: false,
 		font: {
 			size: 14,
@@ -14,7 +18,6 @@ const DoughnutChart = (props) => {
 		},
 
 		responsive: true,
-		cutout: 70,
 		plugins: {
 			tooltip: {
 				enabled: false,
@@ -42,10 +45,10 @@ const DoughnutChart = (props) => {
 		<React.Fragment>
 			<div className="Title">{title}</div>
 			<div className={className}>
-				<div className="DoughnutContainer">
-					<Doughnut data={data} options={doughnutOptions} />
+				<div className="PieContainer">
+					<Pie data={data} options={pieOptions} /> {/* Changed from Pie to Pie */}
 				</div>
-				<div className="DoughnutLabels">
+				<div className="PieLabels">
 					<DoughnutLabel data={data} />
 				</div>
 			</div>
@@ -53,4 +56,4 @@ const DoughnutChart = (props) => {
 	);
 };
 
-export default DoughnutChart;
+export default PieChart; // Changed export name

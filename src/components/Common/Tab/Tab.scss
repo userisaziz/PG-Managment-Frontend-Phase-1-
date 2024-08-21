@@ -4,9 +4,12 @@
 	border-bottom: 1px solid rgba(202, 201, 201, 0.3);
 	display: flex;
 	gap: 2rem;
-	margin-bottom: 1rem;
+	// padding-right: 2rem;
+	// margin-bottom: 1rem;
 	&--TabName {
 		padding-bottom: 1.5rem;
+		padding-top: 1.5rem;
+
 		font-size: 2rem;
 		font-weight: 600;
 		line-height: 22px;

@@ -15,6 +15,7 @@ import { ReactDropdown } from '../../../../components/Common';
 import { useNavigate } from 'react-router-dom';
 import { useGetAllHostels } from '../../Hostel/Redux/actionCreator';
 import { pathname } from '../../../../router/pathname';
+import Name from '../RoomCellRenderers/Name';
 const AllRooms = () => {
 	const dispatch = useDispatch();
 	const { rooms } = useSelector((state) => state);

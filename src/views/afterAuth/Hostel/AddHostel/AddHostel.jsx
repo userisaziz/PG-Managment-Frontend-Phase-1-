@@ -5,6 +5,7 @@ import { Formik, Form, Field } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useCreateHostel } from '../Redux/actionCreator';
 import { toast } from 'sonner';
+import { ReactDropdown } from '../../../../components/Common';
 
 const AddHostel = () => {
 	const dispatch = useDispatch();
@@ -94,7 +95,7 @@ const AddHostel = () => {
 							isRequired
 							errorMessage={touched.pincode && errors.pincode ? errors.pincode : null}
 						/>
-						<Dropdown
+						<ReactDropdown
 							label="PG Type"
 							name="pgType"
 							options={pgTypeOptions}

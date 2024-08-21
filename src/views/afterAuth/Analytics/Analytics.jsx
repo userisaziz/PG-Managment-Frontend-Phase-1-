@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Button, Chip, DashboardCard, ProgressBar, Typography, ViewDetailsCard } from '../../../components/Common';
 import { Money, OpenBook, UpArrow, UserIcon } from '../../../assets/icon';
 import './Analytics.scss';
-import { DoughnutChart, LineChart } from '../../../charts';
+import { DoughnutChart, LineChart, PieChart } from '../../../charts';
 import ActivityView from './ActivityView/ActivityView';
 import DashboardTable from './DashboardTable/DashboardTable';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,21 +18,19 @@ const Analytics = () => {
 	}, []);
 	const doughnutData = {
 		labels: [
-			{ key: 'Asia', value: '10 lacs' },
-			{ key: 'South America', value: '10 lacs' },
-			{ key: 'North America', value: '10 lacs' },
-			{ key: 'Australia', value: '10 lacs' },
-			{ key: 'Antarctica', value: '10 lcas' },
-			{ key: 'Europe', value: '10 lacs' },
-			{ key: 'Africa', value: '10 lacs' },
+			{ key: 'Hostel 1', value: '10 lacs' },
+			{ key: 'Hostel 2', value: '10 lacs' },
+			{ key: 'Hostel 3', value: '10 lacs' },
 		],
 		datasets: [
 			{
-				data: [9, 17, 3, 5, 10, 11, 56],
+				data: [9, 17, 3],
 				hoverOffset: 0,
-				cutout: '75%',
+				cutout: '5%',
 				rotation: 270,
-				borderRadius: [8, 8, 8, 8, 8, 8, 8],
+				borderColor: '#231e1e',
+				backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // Added backgroundColor
+				borderRadius: [5, 5, 5],
 			},
 		],
 	};
@@ -45,8 +43,12 @@ const Analytics = () => {
 		datasets: [
 			{
 				data: [analyticsData?.vacantBeds, analyticsData?.occupiedBeds],
-				fill: true,
-				backgroundColor: ['#FF6B6B', '#93d96f'],
+				hoverOffset: 0,
+				cutout: '75%',
+				rotation: 270,
+				borderColor: '#231e1e',
+				backgroundColor: ['#FF6384', '#36A2EB'], // Added backgroundColor
+				borderRadius: [8, 8],
 			},
 		],
 	};
@@ -83,10 +85,10 @@ const Analytics = () => {
 				</section>
 
 				<Box className="Analytics--Right">
-					<DoughnutChart
+					<PieChart
 						className="Analytics--Doughnut"
 						data={doughnutData}
-						title="Revenue distributed per PG"
+						title="Revenue distributed by Hostels"
 						text="₹37.5 Cr"
 					/>
 				</Box>

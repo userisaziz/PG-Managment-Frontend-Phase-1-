@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useGetAllHostels } from '../Redux/actionCreator';
 import { useNavigate } from 'react-router-dom';
 import { pathname } from '../../../../router/pathname';
+import Name from './CellRenderers/Name/Name';
 
 const AllHostels = () => {
 	const dispatch = useDispatch();
@@ -25,7 +26,11 @@ const AllHostels = () => {
 	}, []);
 
 	const hostelHeader = [
-		{ headerName: 'Name', field: 'name' },
+		{
+			headerName: 'Name',
+			field: 'name',
+			cellRenderer: Name,
+		},
 		{ headerName: 'State', field: 'address.state' },
 		{ headerName: 'District', field: 'address.district' },
 		{ headerName: 'Pincode', field: 'address.pincode' },

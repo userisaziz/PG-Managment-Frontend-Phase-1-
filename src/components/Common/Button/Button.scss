@@ -68,7 +68,8 @@
 		height: 24px;
 		display: flex;
 		align-items: center;
-
+		font-size: 1.6rem;
+		font-weight: 600;
 		svg,
 		img {
 			width: 14px;
@@ -89,10 +90,15 @@
 		background-color: $color-black-100;
 	}
 	&--Link {
+		font-size: 1.4rem;
 		font-weight: 600;
 		min-width: fit-content;
 		padding: 0;
 		color: $color-dark-red-400;
 		background-color: inherit;
+		&:hover {
+			text-decoration: underline;
+			transition: all 0.3s ease;
+		}
 	}
 }

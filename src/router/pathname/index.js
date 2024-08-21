@@ -8,12 +8,14 @@ export const pathname = {
 	VIEW_TICKET: '/slm-admin/dashboard/help-desk/view-ticket',
 	VIEW_REPORT: '/slm-admin/dashboard/help-desk/view-report',
 	TRANSACTION_HISTORY: '/slm-admin/dashboard/transactions-management',
-	TRANSACTION_DETAILS: '/slm-admin/dashboard/transaction-history/:id',
+	TRANSACTION_DETAILS: '/slm-admin/dashboard/transaction-history',
 	CONTENT_MANAGEMENT: '/slm-admin/dashboard/rooms-management',
 
+	// HOSTELS
 	HOSTELS: '/slm-admin/dashboard/hostels',
 	ADD_HOSTELS: '/slm-admin/dashboard/hostels/add-hostels',
 	ADD_FLOOR: '/slm-admin/dashboard/hostels/add-hostels',
+	HOSTEL_DETAILS: "/slm-admin/dashboard/hostels/details",
 
 	TRANSACTIONS: '/slm-admin/dashboard/transactions-management',
 	FINANCE: '/slm-admin/dashboard/finance',
@@ -28,4 +30,5 @@ export const pathname = {
 	ROOMS: '/slm-admin/dashboard/rooms-management',
 	ROOMS_LIST: '/slm-admin/dashboard/rooms-management/list',
 	ADD_ROOM: '/slm-admin/dashboard/rooms-management/add-room',
+	ROOM_DETAILS: '/slm-admin/dashboard/rooms-management/details',
 };

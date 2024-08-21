@@ -21,6 +21,9 @@ import AllRooms from '../../views/afterAuth/Rooms/AllRooms/AllRooms';
 import AddHostel from '../../views/afterAuth/Hostel/AddHostel/AddHostel';
 import AddRoom from '../../views/afterAuth/Rooms/AddRoom/AddRoom';
 import BookRoom from '../../views/afterAuth/Rooms/BookRoom/BookRoom';
+import TransactionView from '../../views/afterAuth/TransactionView/TransactionView';
+import HostelDetails from '../../views/afterAuth/Hostel/HostelDetails/HostelDetails';
+import RoomDetails from '../../views/afterAuth/Rooms/RoomDetails/RoomDetails';
 
 const LoginLayout = React.lazy(() => import(`../../layouts/LoginLayout/LoginLayout`));
 
@@ -62,6 +65,11 @@ const router = createBrowserRouter([
 			},
 
 			{
+				path: pathname.TRANSACTION_DETAILS,
+				element: <TransactionView />,
+
+			},
+			{
 				path: pathname.HOSTELS,
 				element: <Hostels />,
 				children: [
@@ -73,10 +81,11 @@ const router = createBrowserRouter([
 						path: pathname.ADD_HOSTELS,
 						element: <AddHostel />,
 					},
-					// {
-					// 	path: pathname.TRANSACTION_DETAILS,
-					// 	element: <TransactionDetails />,
-					// },
+					{
+						path: pathname.HOSTEL_DETAILS,
+						element: <HostelDetails />,
+					},
+
 				],
 			},
 			{
@@ -97,7 +106,10 @@ const router = createBrowserRouter([
 						path: pathname.BOOK_ROOM,
 						element: <BookRoom />,
 					},
-
+					{
+						path: pathname.ROOM_DETAILS,
+						element: <RoomDetails />
+					}
 					// {
 					// 	path: pathname.TRANSACTION_DETAILS,
 					// 	element: <TransactionDetails />,
@@ -123,10 +135,7 @@ const router = createBrowserRouter([
 						element: <BookRoom />,
 					},
 
-					// {
-					// 	path: pathname.TRANSACTION_DETAILS,
-					// 	element: <TransactionDetails />,
-					// },
+
 				],
 			},
 		],
